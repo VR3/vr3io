@@ -1,0 +1,80 @@
+<!-- Header -->
+<header>
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">TODO EN UNO</div>
+      <!--div class="intro-lead-in">Dejanos preocuparnos por los detalles.</div-->
+      <a href="#services" class="page-scroll btn btn-xl">Descubre como aquí</a>
+    </div>
+  </div>
+</header>
+<!-- Solutions Section -->
+<section id="clients" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Clientes</h2>
+        <h3 class="section-subheading normal-text">Personas y empresas que confiaron en nosotros.</h3>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Solutions Section -->
+<section id="solutions">
+  <div class="container">
+    <div class="row">
+      <div class="text-center">
+        <h2 class="section-heading">Soluciones</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Contacto</h2>
+        <h3 class="section-subheading text-subtitle-white">Escríbenos aquí, o mándanos un correo a <a href="mailto:info@vr3.io" style="color: #FFBDBE;">info@vr3.io</a></h3>
+        <br/>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <form action="php/contact.php" method="post" class="validate" target="_blank" novalidate role="form" id="contactForm">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+              <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Nombre" id="name" required="" data-validation-required-message="Porfavor escribe tu nombre completo.">
+                <p class="help-block text-danger list-unstyled"></p>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" id="email" required="" data-validation-required-message="Porfavor escribe tu correo electrónico.">
+                <p class="help-block text-danger"></p>
+              </div>
+              <div class="form-group">
+                <textarea type="text" name="message" class="form-control" placeholder="Mensaje" id="email" required="" data-validation-required-message="Porfavor escribe tu mensaje."></textarea> 
+                <p class="help-block text-danger"></p>
+              </div>
+              
+               <div class="checkbox">
+                <label>
+                  <input type="checkbox"> <p class="normal-text-white">Al enviar esta forma aceptas el <a href="./privacidad.html" style="color: #FFBDBE;">Aviso de Privacidad y Términos de Uso</a></p>
+                </label>
+              </div>        
+              <div class="g-recaptcha" data-sitekey="6Ld6AR8TAAAAACju2U8T7UsQNRq_GadUYw9HOXnk"></div>
+              <br/>
+            </div>
+            <div class="col-md-6 col-md-offset-3">
+              <div id="success"></div>
+              <div id="error"></div>
+            </div>
+            <div class="col-sm-12 text-center">
+              <button type="submit" class="btn btn-xl">Enviar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
