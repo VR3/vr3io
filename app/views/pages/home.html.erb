@@ -2,50 +2,13 @@
 <header>
   <div class="container">
     <div class="intro-text">
-      <div class="intro-heading">Toma el control de tu audiencia, y conviertelos en tus clientes.</div>
+      <div class="intro-heading"></div>
       <div class="intro-lead-in">Dejanos preocuparnos por los detalles.</div>
       <a href="#services" class="page-scroll btn btn-xl">Descubre como aquí</a>
     </div>
   </div>
 </header>
-<!-- Subscribe Section -->
-<section id="subscribe" class="bg-light-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        
-        <h3 class="section-subheading normal-text">Recibe las útlimas noticias de VR3.</h3>
 
-        <!-- Begin MailChimp Signup Form -->
-        <div >
-          <form action="http://vr3.us14.list-manage.com/subscribe/post?u=c424b4ecee3ad93a9cfbe2ea8&amp;id=74da438cf0" method="post"  name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div >
-            <!--div class="mc-field-group form-group">
-              <input type="text" value="" name="FNAME" placeholder="Nombre" class="form-control">
-            </div>
-            <div class="mc-field-group form-group">
-              <input type="text" value="" name="LNAME" placeholder="Apellido" class="form-control">
-            </div-->
-            <div class="mc-field-group form-group">
-              <input type="email" value="" name="EMAIL" class="required email form-control" placeholder="Correo electrónico" >
-            </div>
-              <div id="mce-responses" class="clear">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-              </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c424b4ecee3ad93a9cfbe2ea8_74da438cf0" tabindex="-1" value=""></div>
-              <div><input type="submit" value="Subscribirse" name="Subscribirse" class="btn btn-xl btn-inverse"></div>
-            </div>
-          </form>
-        </div>
-
-        <!--End mc_embed_signup-->
-
-      </div>
-    </div>
-    <br/>
-  </div>
-</section>
 <!-- Services Section -->
 <section id="services">
   <div class="container">
@@ -120,20 +83,74 @@
       </div>
     </div>
     <br/>
-    <div class="clients">
-      <%= image_tag "clients/google.png", class: "client-img" %>
-      <%= image_tag "clients/caponeto.png", class: "client-img" %>
-      <%= image_tag "clients/3m.png", class: "client-img" %>
-      <%= image_tag "clients/coca.png", class: "client-img" %>
-      <%= image_tag "clients/indio.png", class: "client-img"  %>
-      <%= image_tag "clients/modelo.png", class: "client-img" %>
-      <%= image_tag "clients/scotch.png", class: "client-img" %>
-      <%= image_tag "clients/warner.png", class: "client-img" %>
-      <%= image_tag "clients/zumba.png", class: "client-img" %>
-      <%= image_tag "clients/coppel.png", class: "client-img" %>
-      <%= image_tag "clients/purina.png", class: "client-img" %>
-      <%= image_tag "clients/marin.png", class: "client-img" %>
+
+    <div class="row" id="portfolio"> 
+      <div class="col-md-3">
+        <a href="#">
+           <%= image_tag "clients/google.png", class: "client-img-high" %>
+        </a>
+      </div>
+      <div class="col-md-3 ">
+        <a href="#">
+          <%= image_tag "clients/samsung.png", class: "client-img-high" %>  
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/modelo.png", class: "client-img-high" %>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/coca.png", class: "client-img-high" %>
+        </a>
+      </div>
     </div>
+    <div class="row" id="portfolio"> 
+      <div class="col-md-3">
+        <a href="#">
+           <%= image_tag "clients/3m.png", class: "client-img" %>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/airwick.png", class: "client-img" %>  
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/warner.png", class: "client-img" %>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/purina.png", class: "client-img" %>
+        </a>
+      </div>
+    </div>
+    <div class="row" id="portfolio"> 
+      <div class="col-md-3">
+        <a href="#">
+           <%= image_tag "clients/coppel.png", class: "client-img" %>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/scotch.png", class: "client-img" %>  
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/zumba.png", class: "client-img" %>
+        </a>
+      </div>
+      <div class="col-md-3">
+        <a href="#">
+          <%= image_tag "clients/indio.png", class: "client-img" %>
+        </a>
+      </div>
+    </div>
+
     </div>
   </div>
 </section>
@@ -184,6 +201,16 @@
     </div>
   </div>
 </section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="bg-light-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Clientes</h2>
+        <h3 class="section-subheading normal-text">Personas y empresas que confiaron en nosotros.</h3>
+      </div>
+    </div>
+    <br/>
 <!-- Contact Section -->
 <section id="contact">
   <div class="container">

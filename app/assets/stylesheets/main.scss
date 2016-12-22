@@ -545,6 +545,73 @@ section {
   }
 }
 
+section {
+  &#contact {
+    .section-heading {
+      color: #FFF;
+    }
+    .form-group {
+      margin-bottom: 25px;
+      input, textarea {
+        padding: 20px;
+      }
+      input.checkbox {
+        height: auto;
+      }
+      textarea.form-control {
+        height: 236px;
+      }
+    }
+    .form-control:focus {
+      border-color: #FF6666;
+      box-shadow: none;
+    }
+    &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
+      text-transform: uppercase;
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-weight: 700;
+      color: #bbb;
+    }
+    .text-danger {
+      color: #e74c3c;
+    }
+    background-image: linear-gradient(to bottom right, #3D73B1, #E73F44);
+  }
+  &#clients {
+    text-align: center;
+    img {
+      position: relative;
+      margin-top: 30px;
+    }
+    .client-img{
+      width: 60%;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 30px;
+    }
+    .client-img-high{
+      width: 80%;
+      margin-left: 10px;
+      margin-right: 10px;
+      margin-bottom: 30px;
+    }
+  }
+}
+@media (min-width: 767px) {
+  .client-item {
+    width: 30%;
+    margin-left: 55px;
+    margin-right: 5px;
+    margin-bottom: 15px;
+  }
+  .client-img-high{
+      width: 40%;
+      margin-left: 5px;
+      margin-right: 5px;
+      margin-bottom: 15px;
+    }
+}
+
 .timeline {
   position: relative;
   padding: 0;
@@ -737,52 +804,6 @@ section {
   }
 }
 
-section {
-  &#contact {
-    .section-heading {
-      color: #FFF;
-    }
-    .form-group {
-      margin-bottom: 25px;
-      input, textarea {
-        padding: 20px;
-      }
-      input.checkbox {
-        height: auto;
-      }
-      textarea.form-control {
-        height: 236px;
-      }
-    }
-    .form-control:focus {
-      border-color: #FF6666;
-      box-shadow: none;
-    }
-    &::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder {
-      text-transform: uppercase;
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-weight: 700;
-      color: #bbb;
-    }
-    .text-danger {
-      color: #e74c3c;
-    }
-    background-image: linear-gradient(to bottom right, #3D73B1, #E73F44);
-  }
-  &#clients {
-    text-align: center;
-    img {
-      position: relative;
-      max-width: 30%;
-      left: 25%;
-    }
-    .client-img{
-      width: 15%;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-  }
-}
 
 footer {
   padding: 25px 0;
