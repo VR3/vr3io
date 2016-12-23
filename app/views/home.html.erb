@@ -2,9 +2,9 @@
 <header>
   <div class="container">
     <div class="intro-text">
-      <div class="intro-heading"></div>
-      <div class="intro-lead-in">Dejanos preocuparnos por los detalles.</div>
-      <a href="#services" class="page-scroll btn btn-xl">Descubre como aquí</a>
+      <div class="intro-heading">Expertos en Realidad Virtual y Aumentada.</div>
+      <div class="intro-lead-in">Fácil. Rápido. Inmediato</div>
+      <a href="#services" class="page-scroll btn btn-xl">Conoce más</a>
     </div>
   </div>
 </header>
@@ -204,7 +204,7 @@
   </section-->
 
 <!-- Portfolio Section -->
-<section id="portfolio">
+<section id="projects">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -213,37 +213,25 @@
       </div>
     </div>
     </br>
-    <div class="row">
-      <a href="#">
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img class="img-responsive" src="http://placehold.it/350x250" alt="Google">
-            <div class="caption">
-              <h3><u>Esto Es video</u></h3>
-              <h4>Google/YouTube</h4>
-              <h5>AGENCIA: Caponeto</h5>
-              <h5>FECHA: 20/10/2016 - 4/11/2016</h5>
-              <p>Activación de Realidad Virtual, usando el HTC Vive y Google Tiltbrush para complementar el evento de YouTube: Esto es Video.</p>
-            </div>
-          </div>
-        </div>
-      </a>
-      <a href="#">
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img class="img-responsive" src="http://placehold.it/350x250" alt="Google">
-            <div class="caption">
-              <h3><u>Esto Es Video</u></h3>
-              <h4>Google/YouTube</h4>
-              <h5>AGENCIA: Caponeto</h5>
-              <h5>FECHA: 20/10/2016 - 4/11/2016</h5>
-              <p>Activación de Realidad Virtual, usando el HTC Vive y Google Tiltbrush para complementar el evento de YouTube: Esto es Video.</p>
-            </div>
-          </div>
-        </div>
-      </a>
-    </div>
 
+    <div class="row">
+      <% @projects.each do |p| %>
+        <%= link_to project_path(p.id) do %>
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img class="img-responsive" src="http://placehold.it/350x250" alt="Google">
+              <div class="caption">
+                <h3><u><%= p.title %></u></h3>
+                <h4><%= p.client %></h4>
+                <h5><%= p.provider %></h5>
+                <h5><%= p.date %></h5>
+                <p><%= p.description %></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
     <br/>
   </div>
 </section>
