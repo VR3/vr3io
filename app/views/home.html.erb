@@ -4,7 +4,7 @@
     <div class="intro-text">
       <div class="intro-heading">Expertos en Realidad Virtual y Aumentada.</div>
       <div class="intro-lead-in">Fácil. Rápido. Inmediato</div>
-      <a href="#services" class="page-scroll btn btn-xl">Conoce más</a>
+      <a href="#projects" class="page-scroll btn btn-xl">Conoce más</a>
     </div>
   </div>
 </header>
@@ -219,11 +219,12 @@
         <%= link_to project_path(p.id) do %>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <img class="img-responsive" src="http://placehold.it/350x250" alt="Google">
+              <%= image_tag "http://vr3.io/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
+              <!--img class="img-responsive" src="http://placehold.it/350x250" alt="Google"-->
               <div class="caption">
                 <h3><u><%= p.title %></u></h3>
-                <h4><%= p.client %></h4>
-                <h5><%= p.provider %></h5>
+                <h4>CLiente: <%= p.client %></h4>
+                <h5>Agencia: <%= p.provider %></h5>
                 <h5><%= p.date %></h5>
                 <p><%= p.description %></p>
               </div>
