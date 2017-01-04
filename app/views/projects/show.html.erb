@@ -26,7 +26,10 @@
 			<div class="carousel-caption">
 				<h3><u><%= @project.title %></u></h3>
 				<h4>Cliente: <%= link_to(@project.client, "http://#{@project.client}.com") %></h4>
-				<!--h4>Agencia: <%= link_to(@project.provider, "http://#{@project.provider}.com") %></h4-->
+				<% if @project.provider %>
+					<h4>Agencia: <%= link_to(@project.provider, "http://#{@project.provider}.com") %></h4>
+				<% else %>
+				<% end %>
 				<p><%= @project.description %></p>
 			</div>
 		</div> 

@@ -20,15 +20,34 @@
         <!--li>
           <a class="page-scroll" href="#services">Servicios</a>
         </li-->
-        <li class="">
-          <a class="page-scroll" href="#clients">Clientes</a>
-        </li>
-        <li class="">
-          <a class="page-scroll" href="#projects">Proyectos</a>
-        </li>
-        <li>
-          <a class="page-scroll" href="#contact">Contacto</a>
-        </li>
+        <% if current_page?('/') %>
+          
+          <li class="">
+            <a class="page-scroll" href="#services">Servicios</a>
+          </li>
+          <li class="">
+            <a class="page-scroll" href="#clients">Clientes</a>
+          </li>
+          <li class="">
+            <a class="page-scroll" href="#projects">Proyectos</a>
+          </li>
+          <li>
+            <a class="page-scroll" href="#contact">Contacto</a>
+          </li>
+        <% else %>
+          <li class="">
+            <%= link_to "Servicios", root_path(:anchor => "services") %>
+          </li>
+          <li class="">
+            <%= link_to "Clientes", root_path(:anchor => "clients") %>
+          </li>
+          <li class="">
+            <%= link_to "Proyectos", root_path(:anchor => "projects") %>
+          </li>
+          <li>
+            <%= link_to "Contacto", root_path(:anchor => "contact") %>
+          </li>
+        <% end %>
         <li>
           <a href="/company">Empresa</a>
         </li>
