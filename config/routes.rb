@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources "projects"
 
+  match '/send_mail', to: 'pages#send_mail', via: 'post'
+
   root "pages#show", page: "home"
 
   

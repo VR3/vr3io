@@ -6,6 +6,14 @@ class PagesController < ApplicationController
 		render template: "#{params[:page]}"
 	end
 
+	def send_mail
+		name = params[:name]
+		email = params[:email]
+		body = params[:body]
+		ContactMailer.contact_email(name, email, body).deliver
+		redirect_to root_path, notice: "Mensaje enviado"
+	end
+
 	private
 
 	def get_projects
