@@ -12,8 +12,9 @@ gem 'paperclip', "~> 5.0.0.beta1"
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-slick-rails'
 gem 'jquery-easing-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 # gem 'therubyracer', platforms: :ruby
+gem 'devise'
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'

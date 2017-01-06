@@ -3,7 +3,7 @@ class PagesController < ApplicationController
 	before_action :get_projects
 
 	def show
-		render template: "#{params[:page]}"
+		render template: "/pages/#{params[:page]}"
 	end
 
 	def send_mail
