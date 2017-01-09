@@ -1,13 +1,53 @@
 <!-- Header -->
-<header>
-  <div class="container">
+
+<div class="videoContainer">
+  <div class="overlay">
     <div class="intro-text">
-      <div class="intro-heading">Expertos en Realidad Virtual y Aumentada.</div>
-      <div class="intro-lead-in">Fácil. Rápido. Inmediato</div>
+      <div class="intro-heading">Video y VR en Vivo.</div>
+      <div class="intro-lead-in">Esta es la siguiente forma de entretenimiento.</div>
       <a href="#projects" class="page-scroll btn btn-xl">Conoce más</a>
     </div>
   </div>
-</header>
+  <video autoplay loop muted>
+      <source src="http://vectorthree.com/vr3/img/main/vr3.mp4" type="video/mp4" autoplay muted loop>
+      <source src="http://vectorthree.com/vr3/img/main/vr3.webm" type="video/webm" autoplay muted loop>
+  </video>
+</div>
+
+<!-- Beta Section >
+<section id="subscribe" class="bg-darkest-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading normal-text-white">Participa en el beta</h2>
+        <h3 class="section-subheading normal-text-white">También te subscribiras a nuestro <i>mailing list</i>.</h3>
+      
+
+        
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+          #mc_embed_signup{background:transparent; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+          /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+             We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+        </style>
+        <div id="mc_embed_signup">
+        <form action="//vr3.us14.list-manage.com/subscribe/post?u=c424b4ecee3ad93a9cfbe2ea8&amp;id=74da438cf0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+          
+          <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Correo Electrónico" required>
+
+            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_c424b4ecee3ad93a9cfbe2ea8_74da438cf0" tabindex="-1" value=""></div>
+            <div class="clear"><input type="submit" value="Participar" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+            </div>
+        </form>
+        </div>
+
+
+      </div>
+    </div>
+    </br>
+  </div>
+</section-->
 
 <!-- Services Section -->
 <!--section id="services">
@@ -241,7 +281,7 @@
         <%= link_to project_path(p.id) do %>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <%= image_tag "http://vr3.io/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
+              <%= image_tag "projects/#{p.client}/cover.png", :class => "img-responsive"%>
               <!--img class="img-responsive" src="http://placehold.it/350x250" alt="Google"-->
               <div class="caption">
                 <h3><u><%= p.title %></u></h3>
