@@ -421,58 +421,7 @@ fieldset[disabled] .btn-xl.active {
   }
 }
 
-header {
-  text-align: center;
-  color: #fff;
-  background-attachment: scroll;
-  background-image: linear-gradient(to bottom right, #3D73B1, #E73F4);
-  background-position: center center;
-  background-repeat: none;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  .intro-text {
-    padding-top: 100px;
-    padding-bottom: 50px;
-    .intro-lead-in {
-      margin-bottom: 25px;
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-size: 22px;
-      line-height: 22px;
-    }
-    .intro-heading {
-      margin-bottom: 25px;
-      text-transform: uppercase;
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-size: 50px;
-      font-weight: 700;
-      line-height: 50px;
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  header .intro-text {
-    padding-top: 300px;
-    padding-bottom: 200px;
-    .intro-lead-in {
-      margin-bottom: 25px;
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-size: 25px;
-      line-height: 40px;
-    }
-    .intro-heading {
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-size: 50px;
-      font-weight: 700;
-      line-height: 75px;
-    }
-  }
-}
-
+// Divs !
 div#full-orange{
   text-align: center;
   color: #fff;
@@ -537,6 +486,8 @@ div#full-blue{
   }
 }
 
+//Video Container
+
 .videoContainer {
     position: relative;
     width: 100%;
@@ -561,51 +512,45 @@ div#full-blue{
     opacity: 0.85;
 }
 
-
-.intro-text {
+header {
   text-align: center;
   color: #fff;
-
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  height: 30%;
-  width: 50%;
-  margin: -15% 0 0 -25%;
-
-
-  .intro-lead-in {
-    margin-bottom: 25px;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 22px;
-    line-height: 22px;
-  }
-  .intro-heading {
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-size: 25px;
-    font-weight: 700;
-    line-height: 30px;
+  background-attachment: scroll;
+  background-image: linear-gradient(to bottom right, #EB3349, #F45C43);
+  background-position: center center;
+  background-repeat: none;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    .intro-lead-in {
+      margin-bottom: 25px;
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 22px;
+      line-height: 22px;
+    }
+    .intro-heading {
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+    }
   }
 }
 
 @media (min-width: 768px) {
-  .intro-text {
-    text-align: center;
-    color: #fff;
-
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    height: 30%;
-    width: 50%;
-    margin: -15% 0 0 -25%;
-
+  header .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
     .intro-lead-in {
       margin-bottom: 25px;
       font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-size: 35px;
+      font-size: 25px;
       line-height: 40px;
     }
     .intro-heading {
@@ -614,9 +559,13 @@ div#full-blue{
       font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
       font-size: 50px;
       font-weight: 700;
-      line-height: 55px;
+      line-height: 75px;
     }
   }
+}
+
+
+@media (min-width: 768px) {
 
   div#full-orange{ 
     .intro-text {

@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
+	before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
-	before_action :find_project, only: [:show, :edit, :update, :destroy]
+	#before_action :find_project, only: [:show, :edit, :update, :destroy]
+	before_action :friendly_find_project, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@projects = Project.all.order("created_at -desc")
@@ -22,7 +24,21 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@project
+		@project = Project.friendly.find(params[:id])
+		#@project = Project.find(params[:id])
+	end
+
+	def edit
+		@project = Project.friendly.find(params[:id])
+		#@project = Project.find(params[:id])
+		render 'edit'
+	end
+
+	def update
+		@project = Project.friendly.find(params[:id])
+		#@project = Project.find(params[:id])
+		@project.update(project_params)
+		redirect_to @project
 	end
 
 	private
@@ -30,6 +46,11 @@ class ProjectsController < ApplicationController
 	def find_project
 		@project = Project.find(params[:id])
 	end
+
+	def friendly_find_project
+		@project = Project.friendly.find(params[:id])
+	end
+
 
 	def project_params
 		params.require(:project).permit(:title, :description, :link)

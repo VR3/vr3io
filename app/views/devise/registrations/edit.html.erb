@@ -1,22 +1,28 @@
 <div id="full-blue">
   <div class="container">
     <div class="intro-text">
-      <div class="intro-heading">Editar <%= resource_name.to_s.humanize %></div>
+      <div class="intro-heading">Editar Perfil </div>
+      <h4><%= current_user.username %> | <%= current_user.email %></h4>
     </div>
   </div>
 </div>
 
 </div>
 <div class="container">
-  <div class="row text-center">
-    <div class="col-md-6">
+  <div class="row">
+    <div class="col-md-12">
       <br>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= devise_error_messages! %>
 
         <div class="form-group">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+          <%= f.label "Usuario" %><br />
+          <%= f.text_field :username, autofocus: true, :class => "form-control" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label "Correo Electrónico" %><br />
+          <%= f.email_field :email, :class => "form-control" %>
         </div>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -24,7 +30,7 @@
         <% end %>
 
         <div class="form-group">
-          <%= f.label :password %> <i>(deja en blanco si no quieres cambiar)</i><br />
+          <%= f.label "Contraseña" %> <i>(deja en blanco si no quieres cambiar)</i><br />
           <%= f.password_field :password, autocomplete: "off" , :class => "form-control"%>
           <% if @minimum_password_length %>
             <br />
@@ -33,25 +39,23 @@
         </div>
 
         <div class="form-group">
-          <%= f.label :password_confirmation %><br />
+          <%= f.label "Confirmar Contraseña" %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
         </div>
 
         <div class="form-group">
-          <%= f.label :current_password %> <i>(Necesitamos tu contraseña actual para hacer los cambios)</i><br />
+          <%= f.label "Contraseña Actual" %> <i>(Necesitamos tu contraseña actual para hacer los cambios)</i><br />
           <%= f.password_field :current_password, autocomplete: "off", :class => "form-control"%>
         </div>
 
         <div class="actions">
-          <%= f.submit "Actualizar" %>
+          <%= f.submit "Actualizar", :class=>"btn btn-xl btn-inverse" %>
         </div>
       <% end %>
+      <br>
+      <p><%= link_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Segur@?" }, method: :delete%></p>
 
-      <h3>Cancel my account</h3>
-
-      <p>Unhappy? <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Segur@?" }, method: :delete %></p>
-
-      <%= link_to "Atrás", :back %>
+      <!--%= link_to "Atrás", :back, :class=>"btn btn-info" %-->
     </div>
   </div>
 </div>
