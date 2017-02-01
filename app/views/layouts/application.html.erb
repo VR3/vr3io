@@ -15,6 +15,10 @@
     <meta property="og:type" content="image"/>
     <meta property="og:url" content="http://vr3.io" />
     <meta property="og:image" content="http://www.vr3.io/media/img/og_vr3.png" />
+
+    <!--reCAPTCHA-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
     <!--jQuery-->
     <%= favicon_link_tag 'favicon.ico' %>
     <%= csrf_meta_tags %>
@@ -45,6 +49,7 @@
 
   <body id="page-top" class="index">
     <%= yield %>
+    <%= render partial: "partials/contact" %>
   </body>
 
   <%= render partial: "partials/footer" %>

@@ -14,12 +14,15 @@ $(function(){
   // prevent browser from submitting form
   $(form).submit(function(event){
     event.preventDefault();
-
+    
+    // check if Privacy and TOS are in compliance
     if($(formCheckbox).is(':checked')){
       // serialize
       var formData = $(form).serialize();
-      
-      // check if Privacy and TOS are in compliance
+
+
+      console.log("Form Data:", formData);
+
       // create the asynch request
       $.ajax({
         type: 'POST',
@@ -31,38 +34,41 @@ $(function(){
       .done(function(res){
         
         console.log("done",res);
-        $(formAlert).show();
+        $(formAlert).fadeIn('fast');
         //$(formAlert).removeClass('alert alert-info');
         //$(formAlert).addClass('alert alert-success');
         $(formMessage).html(res);
         $('#name').val('');
         $('#email').val('');
         $('#message').val('');
+        $('#option').val('');
 
         setTimeout(function(){
           $(formAlert).fadeOut('fast');
-        }, 5000);
+        }, 7000);
 
       })
       //fail
       .fail(function(data){
 
-        $(formAlert).show();
-        //$(formAlert).removeClass('alert alert-info');
-        //$(formAlert).addClass('alert alert-error');
+        $(formAlert).fadeIn('fast');
+
         if(data.responseText !== ''){
           console.log("data", data);
           $(formMessage).html(data.responseText);
         } else{
+          $(formAlert).removeClass('alert alert-info');
+          $(formAlert).addClass('alert alert-error');
           $(formMessage).html('<strong>Oops!</strong> Ocurrió un error inesperado. Intenta de nuevo.');
         }
         $('#name').val('');
         $('#email').val('');
         $('#message').val('');
+        $('#option').val('');
 
         setTimeout(function(){
           $(formAlert).fadeOut('fast');
-        }, 5000);
+        }, 7000);
 
       });
     } else{
