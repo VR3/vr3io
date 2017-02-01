@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -13,25 +15,21 @@
     <meta property="og:type" content="image"/>
     <meta property="og:url" content="http://vr3.io" />
     <meta property="og:image" content="http://www.vr3.io/media/img/og_vr3.png" />
-
+    <!--jQuery-->
     <%= favicon_link_tag 'favicon.ico' %>
-
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <!-- Bootstrap Core CSS -->
     <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
-        
     <!-- Custom CSS -->
     <!--link href="css/main.css" rel="stylesheet"-->
     <!-- Custom Fonts -->
     <!--link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"-->
+      <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+      <link href="http://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet" type="text/css">
+      <link href="http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+      <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css"-->
     <!--reCaptcha-->
     <!--script src='https://www.google.com/recaptcha/api.js'></script-->
     <!--Slick Carousel-->
@@ -50,39 +48,38 @@
   </body>
 
   <%= render partial: "partials/footer" %>
+
+
 </html>
-
-
 <!--script>
+  $(window).scroll(function(){
+    var scroll = $(window).scrollTop(); // scroll gets 0 from the top value
+    var height = 600; //this will determine when does the header has to switch
+    
+    if(scroll >= height){
+      $("nav").addClass("navbar-shrink")
+    } else if(scroll < height){
+      $("nav").removeClass("navbar-shrink")
+    }  
+  });
+  </script-->
+<!--
+  WHAT IS IT EXACTLY THAT YOU ARE LOOKING FOR?
+  
+  MAYBE THIS?:
+  
+  ....................../´¯/) 
+  ....................,/¯../ 
+  .................../..../ 
+  ............./´¯/'...'/´¯¯`·¸ 
+  ........../'/.../..../......./¨¯\ 
+  ........('(...´...´.... ¯~/'...') 
+  .........\.................'...../ 
+  ..........''...\.......... _.·´ 
+  ............\..............( 
+  ..............\.............\...
+  
+  >:)
+  
+  -->
 
-    $(window).scroll(function(){
-      var scroll = $(window).scrollTop(); // scroll gets 0 from the top value
-      var height = 600; //this will determine when does the header has to switch
-      
-      if(scroll >= height){
-        $("nav").addClass("navbar-shrink")
-      } else if(scroll < height){
-        $("nav").removeClass("navbar-shrink")
-      }  
-    });
-</script-->
-  <!--
-
-    WHAT IS IT EXACTLY THAT YOU ARE LOOKING FOR?
-
-    MAYBE THIS?:
-
-    ....................../´¯/) 
-    ....................,/¯../ 
-    .................../..../ 
-    ............./´¯/'...'/´¯¯`·¸ 
-    ........../'/.../..../......./¨¯\ 
-    ........('(...´...´.... ¯~/'...') 
-    .........\.................'...../ 
-    ..........''...\.......... _.·´ 
-    ............\..............( 
-    ..............\.............\...
-
-    >:)
-
-    -->

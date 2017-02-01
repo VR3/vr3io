@@ -4,6 +4,7 @@
 * For details, see http://www.apache.org/licenses/LICENSE-2.0.
 */
 
+
 body {
   overflow-x: hidden;
   font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -715,15 +716,15 @@ section {
       color: #FFF;
     }
     .form-group {
-      margin-bottom: 25px;
+      margin-bottom: 10px;
       input, textarea {
-        padding: 20px;
+        padding: 8px;
       }
       input.checkbox {
         height: auto;
       }
       textarea.form-control {
-        height: 236px;
+        height: 176px;
       }
     }
     .form-control:focus {

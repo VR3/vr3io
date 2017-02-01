@@ -17,4 +17,5 @@
 //= require jquery.easing
 //= require jquery.slick
 //= require turbolinks
+//= require validator
 //= require_tree .

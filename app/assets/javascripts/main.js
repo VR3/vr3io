@@ -4,7 +4,7 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-console.log('VR3.io | Video Infraestructure for the Web and VR. Version 1.4.0')
+console.log('VR3.io | Video Infraestructure for the Web and VR. Version 2.1.0')
 
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
