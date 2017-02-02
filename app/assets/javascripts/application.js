@@ -18,4 +18,5 @@
 //= require jquery.slick
 //= require turbolinks
 //= require validator
+//= require navbar
 //= require_tree .
