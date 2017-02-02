@@ -29,11 +29,18 @@
 						<% end %>
 						<p><%= @project.description %></p>
 						<p><%=@project.date %></p>
-						<p><%= @project.link %></p>
+						<% if @project.link %>
+              <%= link_to "Más información", @project.link %>
+            <% end %>
 			  </div>
 			</div>
 		</div>
+		<div class="col-lg-12 col-md-12 text-center">
+			<%= link_to "Regresar a proyectos", root_path(:anchor => "projects") %>
+		</div>
+		<br>
 	</div>
+	
 </div>
 
 
