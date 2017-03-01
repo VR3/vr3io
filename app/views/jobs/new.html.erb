@@ -1,0 +1,52 @@
+<div id="full-blue">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">Carrera en <%= link_to("VR3", root_path) %></div>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <h1>Nuevo Trabajo</h1> 
+        <p>Intenta llenar todos los campos de la posición.
+        </p>
+        <hr>
+        <%= form_for @job do |p| %>
+          <div class="form-group">
+            <%= p.text_field :position, autofocus: true, :class => "form-control validate", :placeholder => "Posición" %>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_field :job_type, autofocus: true, :class => "form-control validate", :placeholder => "Tipo de Trabajo [Diseño, Desarrollo, Marketing, Administración]" %>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_field :location, autofocus: true, :class => "form-control validate", :placeholder => "Ubicación"%>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_field :salary, autofocus: true, :class => "form-control validate", :placeholder => "Salario"%>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_area :overview, autofocus: true, :class => "form-control validate", :placeholder => "Descripción", rows: 5, cols: 10 %>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_area :responsabilities, autofocus: true, :class => "form-control validate", :placeholder => "Responsabilidades", rows: 5, cols: 10 %>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_area :qualifications, autofocus: true, :class => "form-control validate", :placeholder => "Cualidades Deseables", rows: 5, cols: 10 %>
+          </div>
+
+
+          <button class="btn-xl btn-inverse" type="submit" name="action">Enviar</button>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

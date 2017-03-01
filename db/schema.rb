@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170124181644) do
+ActiveRecord::Schema.define(version: 20170301191847) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "jobs", force: :cascade do |t|
+    t.string   "position"
+    t.integer  "job_type"
+    t.string   "location"
+    t.string   "salary"
+    t.text     "overview"
+    t.text     "qualifications"
+    t.text     "responsabilities"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "slug"
+    t.index ["slug"], name: "index_jobs_on_slug", unique: true, using: :btree
+  end
 
   create_table "projects", force: :cascade do |t|
     t.string   "title"
@@ -44,7 +58,7 @@ ActiveRecord::Schema.define(version: 20170124181644) do
     t.string   "username"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
+    t.index ["username"], name: "index_users_on_username", using: :btree
   end
 
 end

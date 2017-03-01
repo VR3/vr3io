@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+jobs = Job.where(position: Faker::Superhero.descriptor, type: Faker::Superhero.power ,location: Faker::StarWars.planet ,salary: Faker::Number.number(5), overview: Faker::Hacker.say_something_smart, qualifications: Faker::Hipster.words(4), responsabilities: Faker::Hipster.sentence(4)).create!

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get ":page" => "pages#show"
 
   resources "projects"
+  resources "jobs"
 
   match '/send_mail', to: 'pages#send_mail', via: 'post'
 

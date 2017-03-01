@@ -1,0 +1,27 @@
+<div id="full-blue">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">Trabaja con nosotros.</div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row text-center">
+    <h3>Vacantes</h3>
+    <div class="text-center bio">
+      <p>En <strong><%= link_to "VR3", root_path %></strong> siempre estamos buscando mentes creativas. Descubre más sobre las vacantes abiertas.</p>
+    </div>
+    <h1>Por el momento, no hay vacantes abiertas. Vuelve pronto !</h1>
+    <div class="col-sm-4 col-md-6 ">
+      <%= @jobs %>
+      <div class="thumbnail">
+        <div class="caption">
+          <h3>Sr Web Developer (RoR)</h3>
+          <p>Increible pasión por el desarrollo web. Especialmente con clientes REST y diseño de APIs.</p>
+          <a class="btn btn-lg">Leer más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
