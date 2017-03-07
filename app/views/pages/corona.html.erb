@@ -1,0 +1,51 @@
+<div id="companypage"></div>
+
+<div id="full-blue">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">Corona AI</div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+	<div class="row text-center">
+		<!--Login with Facebook-->
+		<div class="col-sm-12 col-md-12">
+      
+      <p>Ingresa con Facebook para otorgar los permisos de lectura de tu perfil.</p>
+      <br>
+      <br>
+      <br>
+      <div class="fb-login-button" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="false"></div>
+			<div id="fb-root"></div>
+		  <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+		</div>
+</div>
+<hr>
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1353165308079307',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/es/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>

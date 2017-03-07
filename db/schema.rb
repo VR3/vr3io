@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170301191847) do
 
   create_table "jobs", force: :cascade do |t|
     t.string   "position"
-    t.integer  "job_type"
+    t.integer  "type"
     t.string   "location"
     t.string   "salary"
     t.text     "overview"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20170301191847) do
     t.string   "username"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-    t.index ["username"], name: "index_users_on_username", using: :btree
+    t.index ["username"], name: "index_users_on_username", unique: true, using: :btree
   end
 
 end
