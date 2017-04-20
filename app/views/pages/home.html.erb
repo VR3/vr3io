@@ -1,28 +1,27 @@
 <div id="homepage"></div>
-<!--Video-->
-<!--div class="videoContainer">
-  <video autoplay loop muted>
-    <source src="http://vectorthree.com/vr3/img/main/vr3.webm" type="video/webm" autoplay muted loop>
-  </video>
-</div-->
 
-<!-- Header -->
-<header>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="intro-text">
-          <div class="intro-heading">Video Web y VR</div>
-          <div class="intro-lead-in">La siguiente forma de entretenimiento</div>
-          <a href="#projects" class="page-scroll btn btn-xl">Conoce más</a>
-        </div>
+<!--Video-->
+<div class="landing">
+  <div class="video-container">
+    
+    <div class="video-source">
+      <%= video_tag "videos/vr3.webm", autoplay: true, loop: true, muted: true%>
+      <!--video autoplay loop muted src="http://vectorthree.com/vr3/img/main/vr3.webm" type="video/webm"></video-->
+    </div>
+
+    <div class="video-overlay">
+      <div class="overlay-text">
+        <div class="intro-heading">Video Web y VR</div>
+        <div class="intro-lead-in">La siguiente forma de entretenimiento</div>
+        <a href="#projects" class="page-scroll btn btn-xl">Conoce más</a>
       </div>
     </div>
   </div>
-</header>
+</div>
 
-<!-- Beta Section >
-<section id="subscribe" class="bg-darkest-gray">
+
+
+<!--section id="subscribe" class="bg-darkest-gray">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 text-center">
@@ -304,7 +303,7 @@
             <div class="g-recaptcha" data-sitekey="6Ld6AR8TAAAAACju2U8T7UsQNRq_GadUYw9HOXnk"></div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="legalCheckbox" id="legal-checkbox"><p class="normal-text-white">Al enviar esta forma aceptas el <a href="http://vr3.io/privacy" style="color: #FFBDBE;">Aviso de Privacidad y Términos de Uso</a></p>
+                <input type="checkbox" name="legalCheckbox" id="legal-checkbox"><p class="normal-text-white">Al enviar esta forma aceptas el <a href="/privacy" style="color: #FFBDBE;">Aviso de Privacidad y Términos de Uso</a></p>
               </label>
             </div> 
           </div>

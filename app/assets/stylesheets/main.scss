@@ -489,80 +489,116 @@ div#full-blue{
 
 //Video Container
 
-.videoContainer {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-attachment: scroll;
-    overflow: hidden;
-}
-.videoContainer video {
-    min-width: 100%;
-    height:auto;
-    position: relative;
-    z-index: 1;
+.landing{
+  position: relative;
+  margin-bottom: -100px;
 }
 
-header {
-  padding-top: 100px;
-  padding-bottom: 50px;
-  text-align: center;
-  color: #fff;
-  background-attachment: scroll;
-  background-image: linear-gradient(to bottom right, #EB3349, #F45C43);
+.video-container {
+  min-width: 100%;
+  min-height: 80%;
+  width: 80vh;
+  height: 80vh;
   background-position: center center;
-  background-repeat: none;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
-  .intro-text {
-    padding-top: 10px;
-    padding-bottom: 30px;
-    .intro-lead-in {
-      margin-bottom: 25px;
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-size: 22px;
-      line-height: 22px;
-    }
-    .intro-heading {
-      margin-bottom: 25px;
-      text-transform: uppercase;
-      font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-      font-size: 50px;
-      font-weight: 700;
-      line-height: 50px;
-    }
+}
+
+.video-source{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateY(-10%);
+  pointer-events: none;
+  overflow-y: hidden;
+  vertical-align: top;
+}
+
+video{
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 1;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+  pointer-events: none;
+  overflow-y: hidden;
+  vertical-align: top;
+}
+
+.video-overlay{
+  position: relative;
+  width: 100%;
+  height: 90%;
+  color: #fff;
+  z-index: 2;
+
+  //background-image: linear-gradient(to bottom right, #EB3349, #F45C43);
+  background: linear-gradient(to bottom, rgba(235, 51, 73, 0.8), rgba(244, 92, 67, 0.7));
+}
+
+.overlay-text{
+  text-align: center;
+  position: relative;
+  padding-top: 250px;
+  .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    line-height: 22px;
+  }
+  .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
   }
 }
 
-@media (min-width: 768px) {
-  header{
-    padding-top: 150px;
-    padding-bottom: 100px;
-    .intro-text {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      .intro-lead-in {
-        margin-bottom: 25px;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 25px;
-        line-height: 40px;
-      }
-      .intro-heading {
-        margin-bottom: 10px;
-        text-transform: uppercase;
-        font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
-        font-size: 50px;
-        font-weight: 700;
-        line-height: 75px;
-      }
-    }
+
+@media (max-width: 768px) {
+.video-overlay{
+  position: relative;
+  width: 100%;
+  height: 90%;
+  color: #fff;
+  z-index: 2;
+
+  //background-image: linear-gradient(to bottom right, #EB3349, #F45C43);
+  background: linear-gradient(to bottom, rgba(235, 51, 73, 1), rgba(244, 92, 67, 0.5));
+}
+
+.overlay-text{
+  text-align: left;
+  left: 5%;
+  position: relative;
+  padding-top: 175px;
+  .intro-lead-in {
+    margin-bottom: 25px;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+  }
+  .intro-heading {
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 35px;
   }
 }
 
 
-@media (min-width: 768px) {
+
+
 
   div#full-orange{ 
     .intro-text {
@@ -979,7 +1015,8 @@ section {
 footer {
   padding: 25px 0;
   text-align: center;
-  span.copyright {
+  .copyright {
+    font-size: 0.8em;
     text-transform: uppercase;
     text-transform: none;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;

@@ -11,5 +11,4 @@ Rails.application.routes.draw do
 
   match '/send_mail', to: 'pages#send_mail', via: 'post'
 
-  
 end
