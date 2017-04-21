@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get ":page" => "pages#show"
 
+
   resources "projects"
   resources "jobs"
 

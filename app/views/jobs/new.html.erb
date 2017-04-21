@@ -9,13 +9,12 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-sm-12">
-        <h1>Nuevo Trabajo</h1> 
-        <p>Intenta llenar todos los campos de la posición.
-        </p>
-        <hr>
+        <h1>Nueva Vacante</h1> 
+        <p>Intenta llenar todos los campos de la posición.</p>
         <%= form_for @job do |p| %>
+
           <div class="form-group">
-            <%= p.text_field :position, autofocus: true, :class => "form-control validate", :placeholder => "Posición" %>
+            <%= p.text_field :position, autofocus: true, :class => "form-control validate", :placeholder => "Posición"%>
           </div>
 
           <div class="form-group">
@@ -24,6 +23,10 @@
 
           <div class="form-group">
             <%= p.text_field :salary, autofocus: true, :class => "form-control validate", :placeholder => "Salario"%>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_field :type, autofocus: true, :class => "form-control validate", :placeholder => "Tipo"%>
           </div>
 
           <div class="form-group">
@@ -38,9 +41,8 @@
             <%= p.text_area :qualifications, autofocus: true, :class => "form-control validate", :placeholder => "Cualidades Deseables", rows: 5, cols: 10 %>
           </div>
 
-
-          <button class="btn-xl btn-inverse" type="submit" name="action">Enviar</button>
-
+          <%= link_to("Cancelar", jobs_path , class: "btn btn-lg btn-danger") %>
+          <button class="btn btn-lg btn-primary float-right" type="submit" name="action">Crear Vacante</button>
         <% end %>
       </div>
     </div>

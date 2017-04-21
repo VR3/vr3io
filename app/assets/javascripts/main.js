@@ -4,7 +4,11 @@
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
 
-console.log('VR3.io | Video Infraestructure for the Web and VR. Version 2.1.0')
+//'%c Oh my heavens! ', 'background: #222; color: #bada55'
+console.log('%c VR3.io ', 'color: #FFFFFF; background: #DD2128; font-size: 200%;');
+console.log('%c Video Infraestructure for the Web and VR. ', 'color: #FFFFFF; background: #DD2128; font-size: 150%;');
+console.log('%c Version 1.4.5 ', 'background: #F5DF4C; color: #0F1E07;');
+console.log('%c Contact us at: ' + '%c info@vr3.io', 'color:  #1D0909; ','color: #266CAF; font-style: oblique; font-size: 115%;');
 
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin

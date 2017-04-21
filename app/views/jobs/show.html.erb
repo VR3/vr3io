@@ -25,8 +25,14 @@
               <% if @job.salary %>
                 <h5>Salario: <%= @job.salary %></h5>
               <% end %>
+              <% if @job.type %>
+                <h5>Tipo: <%= @job.type %></h5>
+              <% end %>
               <p><u>Descripción</u></p>
               <p><%= @job.overview %></p>
+              <% if @job.responsabilities %>
+                <h5>Salario: <%= @job.salary %></h5>
+              <% end %>
               <p><u>Responsabilidades</u></p>
               <p><%= @job.responsabilities %></p>
               <p><u>Requisitos</u></p>
@@ -36,12 +42,12 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-12 col-md-12 text-center">
+    <div class="col-lg-12 col-md-12 text-center return-link">
       <%= link_to "Regresar al inicio", root_path %>
     </div>
   </div>
-  
 </div>
+
 
 
 <!-- Contact Section -->

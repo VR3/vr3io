@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 	
-	before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 	before_action :set_project, only: [:show, :edit, :update, :destroy]
 
 	def index
@@ -39,7 +39,7 @@ class ProjectsController < ApplicationController
 
 	def destroy
 		@project.destroy
-		redirect_to 'index'
+		redirect_to 'index', notice: "Puesto de Trabajo borrado exitosamente"
 	end
 
 
@@ -51,7 +51,7 @@ class ProjectsController < ApplicationController
 
 
 	def project_params
-		params.require(:project).permit(:title, :description, :link)
+		params.require(:project).permit(:title, :description, :link, :client. :provider, :date)
 	end
 
 end

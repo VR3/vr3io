@@ -19,4 +19,5 @@
 //= require turbolinks
 //= require validator
 //= require navbar
+//= require bootstrap-datepicker
 //= require_tree .

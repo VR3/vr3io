@@ -24,7 +24,7 @@
           <%= link_to "Clientes", root_path(:anchor => "clients") %>
         </li>
         <li>
-          <%= link_to "Proyectos", root_path(:anchor => "projects") %>
+          <%= link_to "Proyectos", "/projects" %>
         </li>
         <li>
           <%= link_to "Contacto", root_path(:anchor => "contact") %>
@@ -32,14 +32,7 @@
         <li>
           <a href="/company">Empresa</a>
         </li>
-        <% if user_signed_in? %>
-          <li>
-            <%= link_to("Nuevo Proyecto", new_project_path , :class=>"btn btn-danger") %>
-          </li>
-          <li>
-            <%= link_to("Nuevo Trabajo", new_job_path , :class=>"btn btn-danger") %>
-          </li>
-        <% end %>
+      
         <!--li class="dropdown">
           <a href="/company" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Empresa <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -50,6 +43,20 @@
         </li-->
 
 
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+         <% if user_signed_in? %>
+          <!--li>
+            <%= link_to( "Nuevo Usuario", new_user_registration_path)  %>
+          </li-->
+          <li>
+            <%= link_to("Nuevo Proyecto", new_project_path) %>
+          </li>
+          <li>
+            <%= link_to("Nueva Vacante", new_job_path) %>
+          </li>
+          <li> <a>|</a> </li>
+        <% end %>
       </ul>
     </div>
     <!-- /.navbar-collapse -->

@@ -1,0 +1,24 @@
+<div id="full-orange">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">Proyectos</div>
+    </div>
+  </div>
+</div>
+
+<section>
+  <% @projects.each do |p| %>
+  <div class="jumbotron">
+    <div class="container">
+        <%= image_tag "http://vectorthree.com/vr3/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
+        <h3><u><%= p.title %></u></h3>
+        <h4>Cliente: <%= p.client %></h4>
+        <h5>Agencia: <%= p.provider %></h5>
+        <h5><%= p.date %></h5>
+        <%= link_to "Leer más...", project_path(p.id), class: "btn btn-primary " %>
+        <!--p><%= p.description.truncate(90) %></p-->
+      </div>
+    </div>
+  </div>
+  <% end %>
+</section>

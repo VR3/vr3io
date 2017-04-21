@@ -1,0 +1,76 @@
+<div id="full-blue">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">Editar Proyecto </div>
+      <div class="intro-heading"><u><%= @project.title %></u></div>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-12 col-lg-12">
+        <%= form_for @project do |p| %>
+
+         
+
+          <video controls muted autoplay>
+            <source src="http://vectorthree.com/vr3/img/projects/<%= @project.client %>/video.mp4" type="video/mp4">
+            <source src="http://vectorthree.com/vr3/img/projects/<%= @project.client %>/video.webm" type="video/webm">
+            Your browser does not support the video tag.
+          </video>
+          </br>
+          </br>
+
+          <p>Deja los campos que no quieras cambiar como están.</p>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Titulo</span>
+              <%= p.text_field :title, autofocus: true, :class => "form-control validate", :placeholder => "Titulo" %>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Descripción</span>
+              <%= p.text_area :description, autofocus: true, :class => "form-control validate", :placeholder => "Descripción", rows: 10, cols: 10 %>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Link / Enlace</span>
+              <%= p.text_field :link, autofocus: true, :class => "form-control validate", :placeholder => "Link" %>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Cliente</span>
+              <%= p.text_field :client, autofocus: true, :class => "form-control validate", :placeholder => "Cliente" %>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Agencia</span>
+              <%= p.text_field :provider, autofocus: true, :class => "form-control", :placeholder => "Agencia" %>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Fecha</span>
+              <input type="text" id="project_date" data-provide='datepicker' class="form-control" autofocus="true">
+            </div>        
+          </div>
+
+          <%= link_to("Cancelar", projects_path , class: "btn btn-lg btn-danger") %>
+          <button class="btn btn-lg btn-primary float-right" type="submit" name="action">Actualizar Proyecto</button>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
