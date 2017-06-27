@@ -1,0 +1,42 @@
+<div id="full-blue">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">Nuevo articulo de <%= link_to("VR3", root_path) %></div>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-12">
+        <p>Intenta llenar todos los campos del articulo.</p>
+        <%= form_for @article do |p| %>
+
+          <div class="form-group">
+            <%= p.text_field :title, autofocus: true, :class => "form-control validate", :placeholder => "Titulo"%>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_field :author, autofocus: true, :class => "form-control validate", :placeholder => "Autor"%>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_field :source, autofocus: true, :class => "form-control validate", :placeholder => "Fuente"%>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_field :link, autofocus: true, :class => "form-control validate", :placeholder => "Enlace"%>
+          </div>
+
+          <div class="form-group">
+            <%= p.text_area :body, autofocus: true, :class => "form-control validate", :placeholder => "Nota", rows: 5, cols: 10 %>
+          </div>
+
+
+          <%= link_to("Cancelar", articles_path , class: "btn btn-lg btn-danger") %>
+          <button class="btn btn-lg btn-primary float-right" type="submit" name="action">Crear Articulo</button>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

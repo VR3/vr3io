@@ -1,0 +1,63 @@
+<div id="full-blue">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading">Editar Articulo </div>
+      <div class="intro-heading"><u><%= @article.title %></u></div>
+    </div>
+  </div>
+</div>
+<section>
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-sm-12 col-lg-12">
+        <%= form_for @article do |a| %>
+
+        <%= image_tag(a.image_url, :class => "img-responsive") %>
+          </br>
+          </br>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Titulo</span>
+              <%= a.text_field :title, autofocus: true, :class => "form-control validate"%>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Fuente</span>
+              <%= a.text_field :source, autofocus: true, :class => "form-control validate"%>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Autor</span>
+              <%= a.text_field :author, autofocus: true, :class => "form-control validate"%>
+            </div>        
+          </div>
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Enlace</span>
+              <%= a.text_field :link, autofocus: true, :class => "form-control validate"%>
+            </div>        
+          </div>
+
+
+
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Nota</span>
+              <%= p.text_area :body, autofocus: true, :class => "form-control validate", :placeholder => "Nota", rows: 10, cols: 10 %>
+            </div>        
+          </div>
+
+          <%= link_to("Cancelar", @article , class: "btn btn-lg btn-danger") %>
+          <button class="btn btn-lg btn-primary float-right" type="submit" name="action">Actualizar Articulo</button>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,112 @@
+<div id="projectspage"></div>
+
+<div id="full-blue">
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-heading"><%= @article.title %></div>
+    </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="container">
+    <div class="col-lg-12 col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+           <div class="row">
+            <div class="col-lg-6 col-md-6">
+             <!--%= image_tag(@article.image_url, :class => "img-responsive") %-->
+            </div>
+            <div class="col-lg-6 col-md-6">
+              <h2><u><%= @article.title %></u></h2>
+              <% if @article.author %>
+                <h4>Autor: <%= @article.author %></h4>
+              <% end %>
+              <% if @article.source %>
+                <h5>Fuente: <%= @article.source %></h5>
+              <% end %>
+              <% if @article.link %>
+                <h5>Enlace: <%= link_to @article.link %></h5>
+              <% end %>
+              <p><u>Nota</u></p>
+              <p><%= @article.body %></p>
+             </div>
+           </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 text-center return-link">
+      <%= link_to "Regresar al inicio", root_path %>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Contacto</h2>
+        <h3 class="section-subheading text-subtitle-white">Escríbenos aquí, o mándanos un correo a <a href="mailto:info@vr3.io" style="color: #FFBDBE;">info@vr3.io</a></h3>
+        <br/>
+      </div>
+    </div>
+    <div class="row">
+      <form method="post" role="form" id="contact-form" action="http://vectorthree.com/vr3/php/contact.php">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-group">
+              <input type="text" name="name" class="form-control" placeholder="Nombre * " id="name" required>
+              <p class="help-block text-danger list-unstyled"></p>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" class="form-control" placeholder="Correo Electrónico * " id="email" required>
+            </div>
+            <div class="form-group">
+              <select class="form-control" name="option" id="option" required>
+                <option value=" " disabled selected hidden>Interés * </option>
+                <option value="streaming">Soluciones de Streaming Web y VR</option>
+                <option value="vr">Desarrollo de Realidad Virtual</option>
+                <option value="ar">Desarrollo de Realidad Aumentada</option>
+                <option value="commercial">Renta y Activaciones Comerciales</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select class="form-control" name="budget" id="budget" required>
+                <option value=" " disabled selected hidden>Presupuesto </option>
+                <option value="1">< 10,000 USD</option>
+                <option value="2">10,000 - 30,000 USD</option>
+                <option value="3">> 30,000 USD</option>
+              </select>
+            </div>
+            <!--div class="form-group text-center" style="color: white;">
+              <label class="radio-inline"><strong>Presupuesto:</strong></label>
+              <label class="radio-inline"><input type="radio" name="optradio" value="1">< 10,000 USD</label>
+              <label class="radio-inline"><input type="radio" name="optradio" value="2">10,000 - 30,000 USD</label>
+              <label class="radio-inline"><input type="radio" name="optradio" value="3">> 30,000 USD</label>
+            </div-->
+            <div class="form-group">
+              <textarea type="text" name="message" class="form-control" placeholder="Mensaje *" id="message" required></textarea> 
+            </div>       
+            <div class="g-recaptcha" data-sitekey="6Ld6AR8TAAAAACju2U8T7UsQNRq_GadUYw9HOXnk"></div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" name="legalCheckbox" id="legal-checkbox"><p class="normal-text-white">Al enviar esta forma aceptas el <a href="http://vr3.io/privacy" style="color: #FFBDBE;">Aviso de Privacidad y Términos de Uso</a></p>
+              </label>
+            </div> 
+          </div>
+          <div class="col-md-6 col-md-offset-3">
+            <div class="alert alert-success" id="contact-form-message" style="display: none;">
+              <p id="contact-form-message-text"></p>
+            </div>
+          </div>
+          <br>
+          <div class="col-sm-12 text-center">
+          <br>
+            <button type="submit" class="btn btn-xl">Enviar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-	before_action :get_projects, :get_jobs
+	before_action :get_projects, :get_jobs, :get_articles
 
 	def show
 		render template: "/pages/#{params[:page]}"
@@ -22,6 +22,10 @@ class PagesController < ApplicationController
 
 	def get_jobs
 		@jobs = Job.all.order("created_at desc")
+	end
+
+	def get_articles
+		@articles = Article.all.order("created_at desc")
 	end
 
 end
