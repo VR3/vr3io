@@ -14,9 +14,12 @@
 				</p>
 				<hr>
 				<%= form_for @project, html: { multipart: true} do |p| %>
-					<div class="form-group">
-						<%= p.text_field :title, autofocus: true, :class => "form-control validate", :placeholder => "Titulo" %>
-					</div>
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon">Titulo</span>
+              <%= p.text_field :title, autofocus: true, :class => "form-control validate", :placeholder => "Titulo" %>
+            </div>        
+          </div>
 
 					<div class="form-group">
 						<p>Portada del Proyecto (562x387, JPG, PNG)</p>
@@ -29,24 +32,40 @@
 					</div>
 
 					<div class="form-group">
-						<%= p.text_area :description, autofocus: true, :class => "form-control validate", :placeholder => "Descripción", rows: 5, cols: 10 %>
+						<div class="input-group">
+							<span class="input-group-addon">Descripción</span>
+							<%= p.text_area :description, autofocus: true, :class => "form-control validate", :placeholder => "Descripción", rows: 5, cols: 10 %>
+						</div>
 					</div>
 
 					<div class="form-group">
-						<%= p.text_field :link, autofocus: true, :class => "form-control validate", :placeholder => "Link" %>
+						<div class="input-group">
+							<span class="input-group-addon">Enlance / URL</span>
+							<%= p.text_field :link, autofocus: true, :class => "form-control validate", :placeholder => "Link" %>
+						</div>
 					</div>
 
 					<div class="form-group">
-						<%= p.text_field :client, autofocus: true, :class => "form-control validate", :placeholder => "Cliente" %>
+						<div class="input-group">
+							<span class="input-group-addon">Cliente</span>
+							<%= p.text_field :client, autofocus: true, :class => "form-control validate", :placeholder => "Cliente" %>
+						</div>
 					</div>
 
 					<div class="form-group">
-						<%= p.text_field :provider, autofocus: true, :class => "form-control", :placeholder => "Agencia" %>
+						<div class="input-group">
+							<span class="input-group-addon">Agencia / Proveedor</span>
+							<%= p.text_field :provider, autofocus: true, :class => "form-control validate", :placeholder => "Agencia / Proveedor" %>
+						</div>
 					</div>
 
 					<div class="form-group">
-						<input type="text" id="date" name="date" data-provide='datepicker' class="form-control" autofocus="true" placeholder="Fecha">
+						<div class="input-group">
+							<span class="input-group-addon">Fecha</span>
+							<input type="text" id="date" name="date" data-provide='datepicker' class="form-control" autofocus="true" placeholder="Fecha">
+						</div>
 					</div>
+
 
 					<button class="btn-xl btn-inverse" type="submit" name="action">Enviar</button>
 

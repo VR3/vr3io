@@ -35,6 +35,8 @@ class ProjectsController < ApplicationController
 
 	def update
 		@project
+		@project.project_image = params[:project][:project_image]
+		@project.project_video = params[:project][:project_video]
 		@project.update(project_params)
 		redirect_to @project
 	end
@@ -53,7 +55,7 @@ class ProjectsController < ApplicationController
 
 
 	def project_params
-		params.require(:project).permit(:title, :description, :link, :client, :provider, :date)
+		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :project_image, :project_video)
 	end
 
 end
