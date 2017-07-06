@@ -12,11 +12,20 @@
 				<h1>Nuevo Proyecto</h1>	
 				<p>Intenta llenar la mayor cantidad de campos con información precisa y básica del trabajo realizado.
 				</p>
-				<p><strong>Por hacer:</strong> Módulo de carga de imagenes/videos, Gestor de folders, Mejorar UI</p> 
 				<hr>
-				<%= form_for @project do |p| %>
+				<%= form_for @project, html: { multipart: true} do |p| %>
 					<div class="form-group">
 						<%= p.text_field :title, autofocus: true, :class => "form-control validate", :placeholder => "Titulo" %>
+					</div>
+
+					<div class="form-group">
+						<p>Portada del Proyecto (562x387, JPG, PNG)</p>
+						<%= p.file_field :project_image, :placeholder => "Imagen" %>
+					</div>
+
+					<div class="form-group">
+						<p>Video del Proyecto (640x480, WEBM, MOV, MP4)</p>
+						<%= p.file_field :project_video, :placeholder => "Video" %>
 					</div>
 
 					<div class="form-group">

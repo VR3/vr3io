@@ -12,10 +12,12 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-		@project = Project.new project_params
+		@project = Project.new project_param
+		@project.project_image = params[:project][:project_image]
+		@project.project_video = params[:project][:project_video]
 
 		if @project.save
-			redirect_to @project, notice: "Proyecto exitosamente guardado"
+			redirect_to @project
 		else
 			render "new"
 		end

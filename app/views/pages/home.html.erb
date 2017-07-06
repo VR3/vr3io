@@ -170,54 +170,6 @@
     </div>
   </div>
 </section>
-<!-- Solutions Section -->
-
-  <!--section id="solutions">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Soluciones</h2>
-          <h3 class="section-subheading normal-text">A la medida y para multiples niveles de demanda.</h3>
-        </div>
-        <br/>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-4 col-sm-4">
-          <div class="panel panel-default panel-fixed-height">
-            <div class="panel-body">
-              <h5>Eventos en Vivo</h5>
-              <p class="text-muted">
-                Transmite tus partidos, conciertos, conferencias, o cualquier evento, en vivo y en directo a través de la web. Monetiza con un Pago-Por-Evento.
-              </p>
-              <a href="" class="readmore-link">Leer Mas...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4">
-          <div class="panel panel-default panel-fixed-height">
-            <div class="panel-body">
-              <h5>Tu propia cadena</h5>
-              <p class="text-muted">
-                Distribuye tu serie, pelicula, cortometraje, o videos institucionales en demanda. Activa un sistema de subscripciones. O simplemente vende tu producción.
-              </p>
-              <a href="" class="readmore-link">Leer Mas...</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4">
-          <div class="panel panel-default">
-            <div class="panel-body">
-              <h5>Marketing Inteligente</h5>
-              <p class="text-muted">
-                Experimenta con los expertos en las tecnologías más nuevas, como VR y AR y crea un fuerte impacto con tu marca o empresa.
-              </p>
-              <a href="" class="readmore-link">Leer Mas...</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section-->
 
 <!-- Portfolio Section -->
 <section id="projects">
@@ -235,8 +187,11 @@
         <%= link_to project_path(p.id) do %>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <%= image_tag "http://static.vr3.io/vr3/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
-              <!--img class="img-responsive" src="http://placehold.it/350x250" alt="Google"-->
+              <% if p.project_image %>
+                <%= image_tag p.project_image.url %>        
+              <% else %>
+                <%= image_tag "http://static.vr3.io/vr3/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
+              <% end %>
               <div class="caption">
                 <h3><u><%= p.title %></u></h3>
                 <h4>Cliente: <%= p.client %></h4>
