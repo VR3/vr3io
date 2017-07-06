@@ -7,9 +7,10 @@ class Project < ApplicationRecord
   validates_attachment_content_type :project_image, content_type: /\Aimage\/.*\z/
 
 	has_attached_file :project_video, :styles => {
-    :medium => { :geometry => "640x480", :format => 'flv' },
-    :thumb => { :geometry => "100x100#", :format => 'jpg', :time => 10 }
+    :medium => { :geometry => "640x480", :format => 'mp4' },
+    :thumb => { :geometry => "160x120", :format => 'jpeg', :time => 10 }
   }, :processors => [:transcoder]
+	validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
 
 	def slug_candidates
 		[
