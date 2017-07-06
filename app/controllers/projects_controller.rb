@@ -57,5 +57,4 @@ class ProjectsController < ApplicationController
 	def project_params
 		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :project_image, :project_video)
 	end
-heroku 
 end
