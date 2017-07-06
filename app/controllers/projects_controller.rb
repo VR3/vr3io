@@ -12,7 +12,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-		@project = Project.new project_param
+		@project = Project.new project_params
 		@project.project_image = params[:project][:project_image]
 		@project.project_video = params[:project][:project_video]
 
