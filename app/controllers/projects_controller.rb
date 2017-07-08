@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
 	
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-	before_action :set_project, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@projects = Project.all.order("created_at asc")
@@ -25,16 +24,16 @@ class ProjectsController < ApplicationController
 	end
 
 	def show
-		@project
+		@project = Project.friendly.find(params[:id])
 	end
 
 	def edit
-		@project
+		@project = Project.friendly.find(params[:id])
 		render 'edit'
 	end
 
 	def update
-		@project
+		@project = Project.friendly.find(params[:id])
 		@project.project_image = params[:project][:project_image]
 		@project.project_video = params[:project][:project_video]
 		@project.update(project_params)
@@ -42,16 +41,13 @@ class ProjectsController < ApplicationController
 	end
 
 	def destroy
+		@project = Project.friendly.find(params[:id])
 		@project.destroy
 		redirect_to 'index', notice: "Puesto de Trabajo borrado exitosamente"
 	end
 
 
 	private
-
-	def set_project
-		@project = Project.friendly.find(params[:id])
-	end
 
 
 	def project_params
