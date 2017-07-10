@@ -11,8 +11,8 @@
 
     <div class="video-overlay">
       <div class="overlay-text">
-        <div class="intro-heading">Video Web y VR</div>
-        <div class="intro-lead-in">La siguiente forma de entretenimiento</div>
+        <div class="intro-heading">VR, AI, Crypto</div>
+        <div class="intro-lead-in">Expertos en desarrollo.</div>
         <a href="#projects" class="page-scroll btn btn-xl">Conoce más</a>
       </div>
     </div>
@@ -184,7 +184,7 @@
 
     <div class="row">
       <% @projects.each do |p| %>
-        <%= link_to project_path(p.id) do %>
+        <%= link_to project_path(p) do %>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
               <% if p.project_image %>
