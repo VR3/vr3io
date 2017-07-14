@@ -1,6 +1,4 @@
 class ProjectsController < ApplicationController
-	
-    #require "paperclip/storage/ftp"
     
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
@@ -48,9 +46,7 @@ class ProjectsController < ApplicationController
 		redirect_to root_path
 	end
 
-
 	private
-
 
 	def project_params
 		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :image, :video)
