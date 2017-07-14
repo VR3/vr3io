@@ -187,23 +187,28 @@
         <%= link_to project_path(p) do %>
           <div class="col-sm-6 col-md-4">
             <div class="thumbnail">
-              <% if p.project_image %>
-                <%= image_tag p.project_image.url %>        
+              <% if p.image(:standard) %>
+                <%= image_tag p.image.url %>        
               <% else %>
                 <%= image_tag "http://static.vr3.io/vr3/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
               <% end %>
               <div class="caption">
                 <h3><u><%= p.title %></u></h3>
+                <% end %>
                 <h4>Cliente: <%= p.client %></h4>
                 <h5>Agencia: <%= p.provider %></h5>
                 <h5><%= p.date %></h5>
                 <p><%= p.description.truncate(90) %></p>
+                <% if user_signed_in? %>
+                    <%= link_to 'Edit', edit_project_path(p) %>
+                    <%= link_to 'Delete', project_path(p), method: :delete %>
+                <% end %>
               </div>
             </div>
           </div>
-        <% end %>
       <% end %>
     </div>
+    
     <br/>
   </div>
 </section>

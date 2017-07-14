@@ -12,8 +12,8 @@
       <div class="col-sm-12 col-lg-12">
         <%= form_for @project do |p| %>
 
-          <% if @project.project_video.url %>
-            <%= video_tag @project.project_video.url, controls: true, muted: true%>
+          <% if @project.video.url %>
+            <%= video_tag @project.video.url, controls: true, muted: true%>
           <% else %>
             <video controls muted autoplay>
               <source src="http://static.vr3.io/vr3/img/projects/<%= @project.client %>/video.mp4" type="video/mp4">
@@ -35,12 +35,12 @@
 
           <div class="form-group">
 						<p>Portada del Proyecto (562x387, JPG, PNG)</p>
-						<%= p.file_field :project_image, :placeholder => "Imagen" %>
+						<%= p.file_field :image, :placeholder => "Imagen" %>
 					</div>
 
 					<div class="form-group">
 						<p>Video del Proyecto (640x480, WEBM, MOV, MP4)</p>
-						<%= p.file_field :project_video, :placeholder => "Video" %>
+						<%= p.file_field :video, :placeholder => "Video" %>
 					</div>
 
           <div class="form-group">
@@ -60,7 +60,7 @@
           <div class="form-group">
             <div class="input-group">
               <span class="input-group-addon">Cliente</span>
-              <%= p.text_field :client, autofocus: true, :class => "form-control validate", :placeholder => "Cliente" %>
+              <%= p.text_field :client, autofocus: true, :class => "form-control validate", :placeholder => "Cliente", :disabled => true %>
             </div>        
           </div>
 

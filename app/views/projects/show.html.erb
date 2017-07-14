@@ -11,8 +11,8 @@
 <div class="row">
 	<div class="container">
 		<div class="col-lg-12 col-md-12">
-      <% if @project.project_video.url %>
-        <%= video_tag @project.project_video.url, controls: true, muted: true%>
+      <% if @project.video.url %>
+        <%= video_tag @project.video.url, controls: true, muted: true%>
       <% else %>
         <video controls muted>
           <source src="http://static.vr3.io/vr3/img/projects/<%= @project.client %>/video.mp4" type="video/mp4">

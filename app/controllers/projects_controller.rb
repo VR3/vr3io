@@ -1,6 +1,8 @@
 class ProjectsController < ApplicationController
 	
-	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+    #require "paperclip/storage/ftp"
+    
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
 		@projects = Project.all.order("created_at asc")
@@ -12,8 +14,8 @@ class ProjectsController < ApplicationController
 
 	def create
 		@project = Project.new project_params
-		@project.project_image = params[:project][:project_image]
-		@project.project_video = params[:project][:project_video]
+		@project.image = params[:project][:image]
+		@project.video = params[:project][:video]
 
 		if @project.save
 			redirect_to @project
@@ -34,8 +36,8 @@ class ProjectsController < ApplicationController
 
 	def update
 		@project = Project.friendly.find(params[:id])
-		@project.project_image = params[:project][:project_image]
-		@project.project_video = params[:project][:project_video]
+		@project.image = params[:project][:image]
+		@project.video = params[:project][:video]
 		@project.update(project_params)
 		redirect_to @project
 	end
@@ -43,7 +45,7 @@ class ProjectsController < ApplicationController
 	def destroy
 		@project = Project.friendly.find(params[:id])
 		@project.destroy
-		redirect_to 'index', notice: "Puesto de Trabajo borrado exitosamente"
+		redirect_to root_path
 	end
 
 
@@ -51,6 +53,6 @@ class ProjectsController < ApplicationController
 
 
 	def project_params
-		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :project_image, :project_video)
+		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :image, :video)
 	end
 end

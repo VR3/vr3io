@@ -15,6 +15,7 @@ gem 'jquery-slick-rails'
 gem 'jquery-easing-rails'
 gem 'font-awesome-rails'
 gem 'paperclip-av-transcoder'
+gem "paperclip-storage-ftp", :git => "git://github.com/xing/paperclip-storage-ftp.git", :ref => "4909d169fe06d964fac6b42b7def929f7664f5d8"
 # gem "paperclip-ffmpeg", "~> 1.2.0"
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
