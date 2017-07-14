@@ -38,4 +38,5 @@ class Project < ApplicationRecord
 		[:title, [:title, :client], [:title, :client, :provider]]
     end
     
+    
 end
