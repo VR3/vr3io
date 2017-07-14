@@ -1,7 +1,7 @@
 class Project < ApplicationRecord
 	
     # require "paperclip/storage/ftp"
-    
+    require 'paperclip'
     extend FriendlyId
 	friendly_id :slug_candidates, :use => [:slugged, :finders]
 
