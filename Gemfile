@@ -16,7 +16,6 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-slick-rails'
 gem 'jquery-easing-rails'
 gem 'font-awesome-rails'
-# gem "paperclip-ffmpeg", "~> 1.2.0"
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 gem 'jquery-rails'
