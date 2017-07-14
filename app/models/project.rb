@@ -12,6 +12,9 @@ class Project < ApplicationRecord
         a.instance.client.downcase
     end 
 
+    #validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+    #validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
+
     has_attached_file :image, :styles => { 
         standard: "562x387>", 
         thumb: "281x194>" },
@@ -29,8 +32,6 @@ class Project < ApplicationRecord
         :ftp_connect_timeout => 10,
         :ftp_ignore_failing_connections => true,
         :ftp_keep_empty_directories => true
-
-    validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
     
 
 	has_attached_file :video, :styles => {
@@ -52,7 +53,7 @@ class Project < ApplicationRecord
         :ftp_ignore_failing_connections => true,
         :ftp_keep_empty_directories => true
 
-	validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
+	
 
 	def slug_candidates
 		[
