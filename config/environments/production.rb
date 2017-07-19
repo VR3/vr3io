@@ -86,7 +86,6 @@ Rails.application.configure do
       :s3_host_name => ENV['AWS_S3_HOST_NAME']
     }
   }
-hjerk
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
