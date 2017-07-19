@@ -26,18 +26,19 @@
 			<div class="panel panel-default">
 			  <div class="panel-body">
 			  		<h2><u><%= @project.title %></u></h2>
-						<% if @project.provider %>
-							<h3><%= @project.client %> - <i><%= @project.provider %></i></h3>
+						<% if @project.provider? %>
+							<h4><%= @project.client %> - <i><%= @project.provider %></i></h4>
 						<% else %>
-							<h3><%= @project.client %></h3>
+							<h4><%= @project.client %></h4>
 						<% end %>
-						<p><%= @project.description %></p>
+            <hr>
+						<p><%= markdown(@project.description) %></p>
 						<p><%=@project.date %></p>
-						<% if @project.link %>
+						<% if @project.link? %>
               <%= link_to "Más información", @project.link %>
             <% end %>
 			  </div>
-			</div>
+			</div>git 
 		</div>
 		<div class="col-lg-12 col-md-12 text-center return-link">
 			<%= link_to "Regresar a proyectos", root_path(:anchor => "projects") %>

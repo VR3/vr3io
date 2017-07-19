@@ -18,6 +18,7 @@ gem 'jquery-easing-rails'
 gem 'font-awesome-rails'
 gem 'aws-sdk', '~> 2.3'
 gem 'figaro'
+gem 'redcarpet'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 gem 'jquery-rails'
