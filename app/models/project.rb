@@ -1,5 +1,6 @@
 class Project < ApplicationRecord
-        
+    include Paperclip::Glue
+
     extend FriendlyId
 	friendly_id :slug_candidates, :use => [:slugged, :finders]
 
@@ -21,8 +22,5 @@ class Project < ApplicationRecord
 	def slug_candidates
 		[:title, [:title, :client], [:title, :client, :provider]]
     end
-
-    private
-
     
 end
