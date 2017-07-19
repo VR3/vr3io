@@ -16,6 +16,8 @@ gem 'bootstrap-sass', '~> 3.3.6'
 gem 'jquery-slick-rails'
 gem 'jquery-easing-rails'
 gem 'font-awesome-rails'
+gem 'aws-sdk', '~> 2.3'
+gem 'figaro'
 # gem 'therubyracer', platforms: :ruby
 gem 'devise'
 gem 'jquery-rails'
