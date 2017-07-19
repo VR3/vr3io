@@ -77,16 +77,16 @@ Rails.application.configure do
 
   # Paperclip AWS S3
   config.paperclip_defaults = {
-    storage: :s3,
-    s3_region: 'us-west-2',
-    region: 'us-west-2',
-    s3_credentials: {
-      bucket:  ENV.fetch('S3_BUCKET_NAME'),
-      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-      s3_host_name: ENV.fetch('AWS_S3_HOST_NAME')
+    :storage => :s3,
+    :s3_region => ENV['AWS_REGION'],
+    :s3_credentials => {
+      :bucket =>  ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY'],
+      :s3_host_name => ENV['AWS_S3_HOST_NAME']
     }
   }
+hjerk
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
