@@ -198,7 +198,7 @@
                 <h4>Cliente: <%= p.client %></h4>
                 <h5>Agencia: <%= p.provider %></h5>
                 <h5><%= p.date %></h5>
-                <p><%= p.description.truncate(90) %></p>
+                <p><%= markdown(p.description.truncate(180)) %></p>
                 <% if user_signed_in? %>
                     <%= link_to 'Edit', edit_project_path(p) %>
                     <%= link_to 'Delete', project_path(p), method: :delete %>

@@ -23,6 +23,7 @@
                         <h4>Cliente: <%= p.client %></h4>
                         <h5>Agencia: <%= p.provider %></h5>
                         <h5><%= p.date %></h5>
+                        <p><%= markdown(p.description.truncate(180))%></p>
                     </div>
                 </div>
             </div>
