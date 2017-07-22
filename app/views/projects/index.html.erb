@@ -13,7 +13,7 @@
             <%= link_to project_path(p) do %>
             <div class="col-sm-4 col-md-4">
                 <div class="thumbnail">
-                    <% if p.image.url? %>
+                    <% if p.image.url %>
                         <%= image_tag p.image.url %>        
                     <% else %>
                         <%= image_tag "http://static.vr3.io/vr3/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
