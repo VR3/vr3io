@@ -13,7 +13,7 @@ class Project < ApplicationRecord
     validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
 
     Paperclip.interpolates :client do |a,s|
-       a.instance.created_at.try(:client.downcase)  
+       a.instance.client.downcase 
     end
 
 	def slug_candidates
