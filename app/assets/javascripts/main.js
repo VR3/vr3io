@@ -5,9 +5,9 @@
  */
 
 //'%c Oh my heavens! ', 'background: #222; color: #bada55'
-console.log('%c VR3.io ', 'color: #FFFFFF; background: #DD2128; font-size: 200%;');
-console.log('%c Video Infraestructure for the Web and VR. ', 'color: #FFFFFF; background: #DD2128; font-size: 150%;');
-console.log('%c Version 1.4.5 ', 'background: #F5DF4C; color: #0F1E07;');
+console.log('%c VR3.io ', 'color: #FFFFFF; background: #DD2128; font-size: 175%;');
+console.log('%c Improving life through technology ', 'color: #FFFFFF; background: #DD2128; font-size: 125%;');
+console.log('%c Version 2.0.5 ', 'background: #F5DF4C; color: #0F1E07;');
 console.log('%c Contact us at: ' + '%c info@vr3.io', 'color:  #1D0909; ','color: #266CAF; font-style: oblique; font-size: 115%;');
 
 

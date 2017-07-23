@@ -14,9 +14,9 @@ class ArticlesController < ApplicationController
     
     def create
         @article = Article.new article_params
-
+        @article.logo = params[:article][:logo]
         if @article.save
-            redirect_to @article    
+            redirect_to 'index'    
         else
             render "new"
         end
@@ -33,8 +33,9 @@ class ArticlesController < ApplicationController
 
     def update
         @article
+        @article.logo = params[:article][:logo]
         @article.update(article_params)
-        redirect_to @article
+        redirect_to 'index'
     end
     
     def destroy
@@ -49,7 +50,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :author, :source, :link, :body, :image_url)    
+        params.require(:article).permit(:title, :author, :source, :link, :body, :logo)    
     end
 
 end

@@ -6,13 +6,11 @@ class JobsController < ApplicationController
   def index
     @jobs = Job.all.order("created_at desc")
   end
-
   
   def new
     @job = Job.new
   end
 
-  
   def create
     @job = Job.new job_params
 
@@ -23,29 +21,24 @@ class JobsController < ApplicationController
     end
   end
 
-  
   def show
     @job
   end
 
-  
   def edit
     @job
     render 'edit'
   end
 
-  
   def update
     @job.update(job_params)
     redirect_to @job
   end
 
-  
   def destroy
     @job.destroy
     redirect_to 'index', notice: "Puesto de Trabajo borrado exitosamente"
   end
-
 
   private
 
@@ -54,8 +47,7 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:position, :type, :location, :salary, :overview, :qualifications, :responsabilities)
+    params.require(:job).permit(:position, :location, :salary, :overview, :qualifications, :responsabilities)
   end
-
 
 end

@@ -1,47 +1,3 @@
-<div id="projectspage"></div>
-
-<div id="full-blue">
-  <div class="container">
-    <div class="intro-text">
-      <div class="intro-heading"><u><%= @job.position %></u></div>
-    </div>
-  </div>
-</div>
-<br>
-<div class="row">
-  <div class="container">
-    <div class="col-lg-12 col-md-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-              <div class="col-lg-6 col-md-6">
-              <%= image_tag("http://static.vr3.io/vr3/img/main/vr3_office.jpg", :class => "img-responsive") %>
-              </div>
-              <div class="col-lg-6 col-md-6">
-                <% if @job.location %>
-                  <h4>Ubicación: <%= @job.location %></h4>
-                <% end %>
-                <% if @job.salary %>
-                  <h5>Salario: <%= @job.salary %></h5>
-                <% end %>
-                <p><u>Descripción: </u> <%= markdown(@job.overview) %></p>
-                <p><u>Responsabilidades:</u> <%= markdown(@job.responsabilities) %></p>
-                <p><u>Requisitos</u> <%= markdown(@job.qualifications) %></p>
-                <%=  mail_to "jobs@vr3.io", 'Aplica aqui', :cc => "info@vr3.io", :subject => "JOB Application @ VR3: " + @job.position %> 
-                <small> (Recuerda tener a la mano tu CV en formato PDF)</small>
-              </div>
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-lg-12 col-md-12 text-center return-link">
-      <%= link_to "Regresar al inicio", root_path %>
-    </div>
-  </div>
-</div>
-
-
-
 <!-- Contact Section -->
 <section id="contact">
   <div class="container">
@@ -64,11 +20,11 @@
             </div>
             <div class="form-group">
               <select class="form-control" name="option" id="option" required>
-                <option value=" " disabled selected hidden>Interés * </option>
-                <option value="streaming">Soluciones de Streaming Web y VR</option>
-                <option value="vr">Desarrollo de Realidad Virtual</option>
-                <option value="ar">Desarrollo de Realidad Aumentada</option>
-                <option value="commercial">Renta y Activaciones Comerciales</option>
+                <option value=" " disabled selected hidden>Interés / Servicio * </option>
+                <option value="vr">Aplicaciones de VR & AR </option>
+                <option value="ai">Machine Learning & AI</option>
+                <option value="crypto">Blockchain & DAPPS</option>
+                <option value="information">Información General</option>
               </select>
             </div>
             <div class="form-group">
@@ -91,7 +47,7 @@
             <div class="g-recaptcha" data-sitekey="6Ld6AR8TAAAAACju2U8T7UsQNRq_GadUYw9HOXnk"></div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" name="legalCheckbox" id="legal-checkbox"><p class="normal-text-white">Al enviar esta forma aceptas el <a href="http://vr3.io/privacy" style="color: #FFBDBE;">Aviso de Privacidad y Términos de Uso</a></p>
+                <input type="checkbox" name="legalCheckbox" id="legal-checkbox"><p class="normal-text-white">Al enviar esta forma aceptas el <a href="/privacy" style="color: #FFBDBE;">Aviso de Privacidad y Términos de Uso</a></p>
               </label>
             </div> 
           </div>
@@ -109,3 +65,4 @@
     </div>
   </div>
 </section>
+
