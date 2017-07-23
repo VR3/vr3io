@@ -12,7 +12,7 @@
     <div class="video-overlay">
       <div class="overlay-text">
         <div class="intro-heading">VR, AI, Crypto</div>
-        <div class="intro-lead-in">Expertos en desarrollo.</div>
+        <div class="intro-lead-in">Evolución a través de la tecnología.</div>
         <a href="#projects" class="page-scroll btn btn-xl">Conoce más</a>
       </div>
     </div>
@@ -198,8 +198,9 @@
                 <h4>Cliente: <%= p.client %></h4>
                 <h5>Agencia: <%= p.provider %></h5>
                 <h5><%= p.date %></h5>
-                <p><%= markdown(p.description.truncate(180)) %></p>
+                <p><%= markdown(p.description.truncate(90)) %></p>
                 <% if user_signed_in? %>
+                    <br>
                     <%= link_to 'Edit', edit_project_path(p) %>
                     <%= link_to 'Delete', project_path(p), method: :delete %>
                 <% end %>
