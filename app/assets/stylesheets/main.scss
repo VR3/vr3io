@@ -594,6 +594,9 @@ section {
 }
 
 #portfolio {
+  .portfolio-thumbnail{
+    max-height: 300px;
+  }
   .portfolio-item {
     right: 0;
     margin: 0 0 15px;
@@ -967,7 +970,6 @@ section {
     margin-top: 25px;
     margin-left: 25px;
 }
-
 
 footer {
   padding: 25px 0;

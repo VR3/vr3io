@@ -53,42 +53,6 @@
   </div>
 </section-->
 
-<!-- Services Section -->
-<!--section id="services">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading">Servicios</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4 col-sm-4">
-        <button class="btn-xl btn-inverse">Transmisiones en Vivo</button>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <button class="btn-xl btn-inverse">Renta de equipo de VR/AR</button>
-      </div>
-      <div class="col-md-4 col-sm-4">
-        <button class="btn-xl btn-inverse">Desarrollo de Software</button>
-      </div>
-    </div>
-  </div>
-</section-->
-
-<!-- Blog/News Section -->
-<!--section id="blog">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-xs-6 col-lg-6 col-md-6">
-        <h2>Blog</h2>
-      </div>
-      <div class="col-xs-6 col-lg-6 col-md-6">
-        <h2>Noticias</h2>
-      </div>
-    </div>
-  </div>
-</section-->
-
 <!-- Clients Section -->
 <section id="clients" class="bg-light-gray">
   <div class="container">
@@ -194,11 +158,11 @@
                           <%= image_tag "http://static.vr3.io/vr3/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
                       <% end %>
                       <div class="caption">
-                          <h3><u><%= p.title %></u></h3>
-                          <h4>Cliente: <%= p.client %></h4>
-                          <h5>Agencia: <%= p.provider %></h5>
+                          <h4><u><%= p.title %></u></h4>
+                          <h5>Cliente: <%= p.client %></h5>
+                          <h6>Agencia: <%= p.provider %></h6>
                           <h5><%= p.date %></h5>
-                          <p><%= markdown(p.description.truncate(90))%></p>
+                          <small><%= markdown(p.description.truncate(20))%></small>
                       </div>
                   </div>
               </div>
