@@ -150,7 +150,7 @@
       <div class="container">
           <% @projects.each do |p| %>
             <%= link_to project_path(p) do %>
-              <div class="col-sm-4 col-md-4">
+              <div class="col-xs-6 col-sm-4 col-md-4">
                   <div class="thumbnail">
                       <% if p.image.url %>
                           <%= image_tag p.image.url %>        
@@ -162,7 +162,17 @@
                           <h5>Cliente: <%= p.client %></h5>
                           <h6>Agencia: <%= p.provider %></h6>
                           <h5><%= p.date %></h5>
-                          <small><%= markdown(p.description.truncate(20))%></small>
+                
+                          <!--small><%= markdown(p.description.truncate(30))%></small-->
+                      <% if user_signed_in? %>
+                          <% if current_user.username == "oschvr" %>
+                            <%= link_to 'Editar', edit_project_path(p), :class => "text-center" %>
+                            <%= link_to 'Eliminar', project_path(p), method: :delete, :class => "text-center" %>
+                          <% end %>
+                      <% end %>
+                      </div>
+                      <div class="text-center">
+                        <p><%= link_to 'Leer más', project_path(p) %></p>
                       </div>
                   </div>
               </div>
