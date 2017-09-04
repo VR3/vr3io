@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-
+  
   root "pages#show", page: "home"
 
-  get ":page" => "pages#show"
+  get "company" => "pages#company"
+  get "privacy" => "pages#privacy"
+  get "services" => "pages#services"
+  get "taxes" => "pages#taxes"
 
   resources "projects"
   resources "jobs"
