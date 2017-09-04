@@ -15,7 +15,9 @@
         <div class="panel-body">
             <div class="row">
               <div class="col-lg-6 col-md-6">
-              <%= image_tag("http://static.vr3.io/vr3/img/main/vr3_office.jpg", :class => "img-responsive") %>
+              <% if @job.picture.url %>
+                <%= image_tag @job.picture.url, :class => "img-responsive"%> 
+              <% end %>
               </div>
               <div class="col-lg-6 col-md-6">
                 <% if @job.location %>
@@ -24,9 +26,9 @@
                 <% if @job.salary %>
                   <h5>Salario: <%= @job.salary %></h5>
                 <% end %>
-                <p><u>Descripción: </u> <%= markdown(@job.overview) %></p>
-                <p><u>Responsabilidades:</u> <%= markdown(@job.responsabilities) %></p>
-                <p><u>Requisitos</u> <%= markdown(@job.qualifications) %></p>
+                <p><u><strong>Descripción:</strong></u> <%= markdown(@job.overview) %></p>
+                <p><u><strong>Responsabilidades:</strong></u> <%= markdown(@job.responsabilities) %></p>
+                <p><u><strong>Requisitos:</strong></u> <%= markdown(@job.qualifications) %></p>
                 <%=  mail_to "jobs@vr3.io", 'Aplica aqui', :cc => "info@vr3.io", :subject => "JOB Application @ VR3: " + @job.position %> 
                 <small> (Recuerda tener a la mano tu CV en formato PDF)</small>
               </div>
@@ -35,7 +37,7 @@
       </div>
     </div>
     <div class="col-lg-12 col-md-12 text-center return-link">
-      <%= link_to "Regresar al inicio", root_path %>
+      <%= link_to "Regresar a vacantes", jobs_path %>
     </div>
   </div>
 </div>

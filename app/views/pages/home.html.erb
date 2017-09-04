@@ -145,7 +145,6 @@
       </div>
     </div>
     </br>
-
     <div class="row">
       <div class="container">
           <% @projects.each do |p| %>
@@ -154,22 +153,25 @@
                   <div class="thumbnail">
                       <% if p.image.url %>
                           <%= image_tag p.image.url %>        
-                      <% else %>
-                          <%= image_tag "http://static.vr3.io/vr3/img/projects/#{p.client}/cover.png", :class => "img-responsive"%>
                       <% end %>
                       <div class="caption">
-                          <h4><u><%= p.title %></u></h4>
-                          <h5>Cliente: <%= p.client %></h5>
-                          <h6>Agencia: <%= p.provider %></h6>
-                          <h5><%= p.date %></h5>
-                
+                        <h4><small class="text-muted">Nombre </small> <u><%= p.title %></u></h4>
+                        <% if p.client %>
+                          <h5 class="project-label"><small class="text-muted">Cliente</small> <%= p.client %></h5>
+                        <% end %>
+                        <% if p.provider %>
+                          <h6 class="project-label"><small class="text-muted">Agencia</small> <%= p.provider %></h6>
+                        <% end %>
+                        <% if p.date %>
+                          <h6 class="project-label"><small class="text-muted">Fecha</small>  <%= p.date %></h6>
+                        <% end %>
                           <!--small><%= markdown(p.description.truncate(30))%></small-->
-                      <% if user_signed_in? %>
-                          <% if current_user.username == "oschvr" %>
-                            <%= link_to 'Editar', edit_project_path(p), :class => "text-center" %>
-                            <%= link_to 'Eliminar', project_path(p), method: :delete, :class => "text-center" %>
-                          <% end %>
-                      <% end %>
+                        <% if user_signed_in? %>
+                            <% if current_user.username == "oschvr" %>
+                              <%= link_to 'Editar', edit_project_path(p), :class => "text-center" %>
+                              <%= link_to 'Eliminar', project_path(p), method: :delete, :class => "text-center" %>
+                            <% end %>
+                        <% end %>
                       </div>
                   </div>
               </div>
@@ -177,7 +179,6 @@
           <% end %>
       </div>
     </div>
-    
     <br/>
   </div>
 </section>

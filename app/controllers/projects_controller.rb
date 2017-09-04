@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
 		@project.image = params[:project][:image]
 		@project.video = params[:project][:video]
 
-		if @project.save
+		if @project.save!
 			redirect_to @project
 		else
 			render "new"
@@ -34,8 +34,13 @@ class ProjectsController < ApplicationController
 
 	def update
 		@project = Project.friendly.find(params[:id])
-		@project.image = params[:project][:image]
-		@project.video = params[:project][:video]
+		if params[:project][:image]
+			@project.image = params[:project][:image]
+		end
+		
+		if params[:project][:video]
+			@project.video = params[:project][:video]
+		end
 		@project.update(project_params)
 		redirect_to @project
 	end

@@ -112,6 +112,10 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
+.project-label{
+  padding-top: -10px; 
+}
+
 .img-centered {
   margin: 0 auto;
 }
@@ -124,13 +128,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #222;
 }
 
-
 .open .dropdown-toggle.btn-primary {
   border-color: #f6bf01;
   color: #fff;
   background-color: #fec503;
 }
-
 
 .btn-xl {
   padding: 20px 40px;

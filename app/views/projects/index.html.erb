@@ -20,9 +20,17 @@
                     <% end %>
                     <div class="caption">
                         <h3><u><%= p.title %></u></h3>
-                        <h4>Cliente: <%= p.client %></h4>
-                        <h5>Agencia: <%= p.provider %></h5>
-                        <h5><%= p.date %></h5>
+                        <% if p.client %>
+                            <small class="text-muted">Cliente</small>
+                            <h4><%= p.client %></h4>
+                        <% end %>
+                        <% if p.provider %>
+                            <small class="text-muted">Agencia</small>
+                            <h5><%= p.provider %></h5>
+                        <% end %>
+                        <% if p.date %>
+                            <h5><%= p.date %></h5>
+                        <% end %>
                         <p><%= markdown(p.description.truncate(90))%></p>
                     </div>
                 </div>

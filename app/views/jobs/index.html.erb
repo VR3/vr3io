@@ -12,22 +12,28 @@
     <div class="text-center bio">
       <p>En <strong><%= link_to "VR3", root_path %></strong> siempre estamos buscando mentes creativas. Descubre más sobre las vacantes abiertas.</p>
     </div>
-    <% if @jobs %>
-        <% @jobs.each do |j| %>
-          <div class="col-sm-6 col-md-6">
-            <div class="thumbnail">
-            <h3><%= link_to j.position, job_path(j) %></h3>
-            <h4><%= j.location %></h4>
-            <p><%= markdown(j.overview.truncate(180)) %></p>
-            <p><%= markdown(j.qualifications.truncate(180)) %></p>
-            <p><%= markdown(j.responsabilities.truncate(180)) %></p>
-            <h4><%= link_to 'Leer más', job_path(j) %></h4>
-            </br>
-            </div>
+    <% if @jobs.exists? %>
+      <% @jobs.each do |j| %>
+        <div class="col-sm-6 col-md-6">
+          <div class="thumbnail">
+          <% if j.image.url %>
+            <%= image_tag j.image.url %>        
+          <% end %>
+          <h3><%= link_to j.position, job_path(j) %></h3>
+          <% if p.client %>
+            <h4 class="project-label"><small class="text-muted">Ubicación: </small> <%= j.location %></h4>
+          <% end %>
+          <p><%= markdown(j.overview.truncate(180)) %></p>
+          <p><%= markdown(j.qualifications.truncate(180)) %></p>
+          <p><%= markdown(j.responsabilities.truncate(180)) %></p>
+          <h4><%= link_to 'Leer más', job_path(j) %></h4>
+          </br>
           </div>
-        <% end %>
+        </div>
+      <% end %>
     <% else %>
-      <p>Por el momento no tenemos vacantes abiertas. Regresa pronto !</p>
+      <p>Por el momento no tenemos vacantes abiertas.</p>
+      <p>Regresa pronto !</p>
     <% end %>
   </div>
 </div>

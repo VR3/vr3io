@@ -13,8 +13,9 @@ class JobsController < ApplicationController
 
   def create
     @job = Job.new job_params
+    @job.picture = params[:job][:picture]
 
-    if @job.save
+    if @job.save!
       redirect_to @job, notice: "Puesto de Trabajo creado exitosamente"
     else
       render "new"
@@ -31,6 +32,9 @@ class JobsController < ApplicationController
   end
 
   def update
+    if params[:job][:picture]
+      @job.picture = params[:job][:picture]
+    end
     @job.update(job_params)
     redirect_to @job
   end
@@ -47,7 +51,7 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:position, :location, :salary, :overview, :qualifications, :responsabilities)
+    params.require(:job).permit(:position, :location, :salary, :overview, :qualifications, :responsabilities, :picture)
   end
 
 end

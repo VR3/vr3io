@@ -1,33 +1,51 @@
 <div id="full-blue">
-  <div class="container">
-    <div class="intro-text">
-      <div class="intro-heading">Trabaja con nosotros.</div>
+    <div class="container">
+      <div class="intro-text">
+        <div class="intro-heading">Trabaja con nosotros.</div>
+      </div>
     </div>
   </div>
-</div>
-<div class="container">
-  <div class="row text-center">
-    <h3>Vacantes</h3>
-    <div class="text-center bio">
-      <p>En <strong><%= link_to "VR3", root_path %></strong> siempre estamos buscando mentes creativas. Descubre más sobre las vacantes abiertas.</p>
-    </div>
-    <br> 
-    <% if @jobs %>
+  <br>
+  <div class="container">
+    <div class="row text-center">
+      <h3>Vacantes</h3>
+      <div class="text-center bio">
+        <p>En <strong><%= link_to "VR3", root_path %></strong> siempre estamos buscando mentes creativas. Descubre más sobre las vacantes abiertas.</p>
+      </div>
+      <% if @jobs.exists? %>
         <% @jobs.each do |j| %>
           <div class="col-sm-6 col-md-6">
             <div class="thumbnail">
-            <h3><%= link_to j.position, job_path(j) %></h3>
-            <h4><%= j.location %></h4>
-            <p><%= markdown(j.overview.truncate(180)) %></p>
-            <p><%= markdown(j.qualifications.truncate(180)) %></p>
-            <p><%= markdown(j.responsabilities.truncate(180)) %></p>
-            <h4><%= link_to 'Leer más', job_path(j) %></h4>
-            </br>
+              <% if j.picture.url %>
+                <%= image_tag j.picture.url, :class => "img-responsive" %>
+              <% end %>
+              <h3><%= link_to j.position, job_path(j) %></h3>
+              <% if j.location %>
+                <h4 class="project-label"><small class="text-muted">Ubicación: </small> <%= j.location %></h4>
+              <% end %>
+              <% if j.overview %>
+                <h6> <small>Descripción: </small> <%= j.overview.truncate(180) %></h6>
+              <% end %>
+              <!--p><%= markdown(j.qualifications.truncate(180)) %></p>
+              <p><%= markdown(j.responsabilities.truncate(180)) %></p-->
+              <h4><%= link_to 'Leer más', job_path(j) %></h4>
+              <% if user_signed_in? %>
+                <% if current_user.username == "oschvr" %>
+                  <%= link_to 'Editar', edit_job_path(j), :class => "text-center" %>
+                  <%= link_to 'Eliminar', job_path(j), method: :delete, :class => "text-center" %>
+                <% end %>
+              <% end %>
+              </br>
             </div>
           </div>
         <% end %>
-    <% else %>
-      <p>Por el momento no tenemos vacantes abiertas. Regresa pronto !</p>
-    <% end %>
+      <% else %>
+        <h4>Por el momento no tenemos vacantes abiertas.</h4>
+        <h5>Regresa pronto !</h5>
+        <br>
+        <%= link_to "Regresar al inicio.", root_path %>
+        <br>
+        <br>
+      <% end %>
+    </div>
   </div>
-</div>
