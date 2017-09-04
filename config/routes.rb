@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root "pages#show", page: "home"
 
+  get ":page" => "pages#show"
+
   resources "projects"
   resources "jobs"
   resources "articles"

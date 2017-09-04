@@ -18,5 +18,8 @@
 .env
 .DS_Store
 
+#Paperclip
+#config/initializers/paperclip.rb
+
 # Ignore application configuration
 /config/application.yml
