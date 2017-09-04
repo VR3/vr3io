@@ -1,5 +1,5 @@
 class Job < ApplicationRecord
-  include Paperclip::Glue
+
   extend FriendlyId
 
   friendly_id :slug_candidates, use: [:slugged, :finders]

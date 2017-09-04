@@ -16,18 +16,32 @@
       <% @jobs.each do |j| %>
         <div class="col-sm-6 col-md-6">
           <div class="thumbnail">
-          <% if j.image.url %>
-            <%= image_tag j.image.url %>        
-          <% end %>
-          <h3><%= link_to j.position, job_path(j) %></h3>
-          <% if p.client %>
-            <h4 class="project-label"><small class="text-muted">Ubicación: </small> <%= j.location %></h4>
-          <% end %>
-          <p><%= markdown(j.overview.truncate(180)) %></p>
-          <p><%= markdown(j.qualifications.truncate(180)) %></p>
-          <p><%= markdown(j.responsabilities.truncate(180)) %></p>
-          <h4><%= link_to 'Leer más', job_path(j) %></h4>
-          </br>
+            <% if j.picture.url %>
+              <%= image_tag j.picture.url, :class => "img-responsive" %>
+            <% end %>
+            <h3><%= link_to j.position, job_path(j) %></h3>
+            <% if j.location %>
+              <h4 class="project-label"> <%= j.location %></h4>
+            <% end %>
+            <% if j.overview %>  
+              <p><%= markdown(j.overview.truncate(180)) %></p>
+            <% end %>
+            <% if j.responsabilities %>  
+              <p><%= markdown(j.responsabilities.truncate(180)) %></p>
+            <% end %>
+            <% if j.qualifications %>  
+              <p><%= markdown(j.qualifications.truncate(180)) %></p>
+            <% end %>
+            <!--p><%= markdown(j.qualifications.truncate(180)) %></p>
+            <p><%= markdown(j.responsabilities.truncate(180)) %></p-->
+            <h4><%= link_to 'Leer más', job_path(j) %></h4>
+            <% if user_signed_in? %>
+              <% if current_user.username == "oschvr" %>
+                <%= link_to 'Editar', edit_job_path(j), :class => "text-center" %>
+                <%= link_to 'Eliminar', job_path(j), method: :delete, :class => "text-center" %>
+              <% end %>
+            <% end %>
+            </br>
           </div>
         </div>
       <% end %>
