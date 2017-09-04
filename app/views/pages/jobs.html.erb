@@ -24,7 +24,8 @@
                 <h4 class="project-label"><small class="text-muted">Ubicación: </small> <%= j.location %></h4>
               <% end %>
               <% if j.overview %>
-                <h6> <small>Descripción: </small> <%= j.overview.truncate(180) %></h6>
+                <small>Descripción: </small>  
+                <h6><%= j.overview.truncate(180) %></h6>
               <% end %>
               <!--p><%= markdown(j.qualifications.truncate(180)) %></p>
               <p><%= markdown(j.responsabilities.truncate(180)) %></p-->

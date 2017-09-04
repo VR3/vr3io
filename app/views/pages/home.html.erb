@@ -165,7 +165,6 @@
                         <% if p.date %>
                           <h6 class="project-label"><small class="text-muted">Fecha</small>  <%= p.date %></h6>
                         <% end %>
-                          <!--small><%= markdown(p.description.truncate(30))%></small-->
                         <% if user_signed_in? %>
                             <% if current_user.username == "oschvr" %>
                               <%= link_to 'Editar', edit_project_path(p), :class => "text-center" %>

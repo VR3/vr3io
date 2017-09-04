@@ -18,7 +18,7 @@ class Project < ApplicationRecord
     end
 
     Paperclip.interpolates :client do |attachment, style|
-        attachment.instance.position.downcase 
+        attachment.instance.client.downcase 
     end
     
 end
