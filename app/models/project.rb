@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+    require 'paperclip'
     include Paperclip::Glue
 
     extend FriendlyId
