@@ -12,11 +12,6 @@
         <h1>Nueva Vacante</h1> 
         <p>Intenta llenar todos los campos de la posición.</p>
         <%= form_for @job do |p| %>
-
-          <div class="form-group">
-            <p>Imagen de la Vacante (562x387, JPG, PNG)</p>
-            <%= p.file_field :picture, :placeholder => "Imagen" %>
-          </div>
         
           <div class="form-group">
             <%= p.text_field :position, autofocus: true, :class => "form-control validate", :placeholder => "Posición"%>
@@ -24,6 +19,14 @@
 
           <div class="form-group">
             <%= p.text_field :location, autofocus: true, :class => "form-control validate", :placeholder => "Ubicación"%>
+          </div>
+
+          <div class="form-group">
+            <%= select_tag :department, options_for_select([['Departamento', 'departmento'], ['Desarrollo', 'desarrollo'], ['Finanzas', 'finanzas'], ['Administración', 'administracion'], ['Soporte', 'soporte']], 'departamento'), :class => "form-control" %>
+          </div>
+
+          <div class="form-group">
+            <%= select_tag :commitment, options_for_select([['Tipo de Trabajo', 'tipo'], ['Tiempo Completo', 'completo'], ['Medio Tiempo', 'medio'], ['Remoto', 'remoto'], ['Consultoría', 'consultor']], 'tipo'), :class => "form-control" %>
           </div>
 
           <div class="form-group">
