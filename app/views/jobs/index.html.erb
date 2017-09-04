@@ -17,9 +17,8 @@
       <ul class="list-group">
         <% @jobs.each do |j| %>
           <li class="list-group-item">
-            <h3><%= j.department %></h3>
             <%= link_to job_path(j) do %> 
-              <h4><%= j.position %> </h4>
+              <h3><%= j.position %> </h3>
             <% end %>
             <h6><%= j.location%> | <%= j.department %> | <%= j.commitment %></h6>
             <% if user_signed_in? %>

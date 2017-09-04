@@ -41,7 +41,7 @@ class JobsController < ApplicationController
 
   def destroy
     @job.destroy
-    redirect_to 'index', notice: "Puesto de Trabajo borrado exitosamente"
+    redirect_to jobs_path, notice: "Puesto de Trabajo borrado exitosamente"
   end
 
   private
@@ -51,7 +51,7 @@ class JobsController < ApplicationController
   end
 
   def job_params
-    params.require(:job).permit(:position, :location, :salary, :overview, :qualifications, :responsabilities, :picture)
+    params.require(:job).permit(:position, :location, :salary, :overview, :qualifications, :responsabilities, :picture, :department, :commitment)
   end
 
 end
