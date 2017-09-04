@@ -21,11 +21,16 @@
               <% end %>
               <h3><%= link_to j.position, job_path(j) %></h3>
               <% if j.location %>
-                <h4 class="project-label"><small class="text-muted">Ubicación: </small> <%= j.location %></h4>
+                <h4 class="project-label"> <%= j.location %></h4>
               <% end %>
-              <% if j.overview %>
-                <small>Descripción: </small>  
-                <h6><%= j.overview.truncate(180) %></h6>
+              <% if j.overview %>  
+                <p><%= markdown(j.overview.truncate(180)) %></p>
+              <% end %>
+              <% if j.responsabilities %>  
+                <p><%= markdown(j.responsabilities.truncate(180)) %></p>
+              <% end %>
+              <% if j.qualifications %>  
+                <p><%= markdown(j.qualifications.truncate(180)) %></p>
               <% end %>
               <!--p><%= markdown(j.qualifications.truncate(180)) %></p>
               <p><%= markdown(j.responsabilities.truncate(180)) %></p-->

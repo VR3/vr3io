@@ -12,7 +12,6 @@ class Project < ApplicationRecord
     
     validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
 
-
 	def slug_candidates
 		[:title, [:title, :client], [:title, :client, :provider]]
     end
