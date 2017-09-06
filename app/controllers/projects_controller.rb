@@ -3,7 +3,7 @@ class ProjectsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
-		@projects = Project.all.order("created_at asc")
+		@projects = Project.all.order("created_at desc")
 	end
 
 	def new
