@@ -14,22 +14,99 @@
         <p>En <strong><%= link_to "VR3", root_path %></strong> siempre estamos buscando mentes creativas. Descubre más sobre las vacantes abiertas.</p>
       </div>
       <% if @jobs.exists? %>
-      <ul class="list-group">
-        <% @jobs.each do |j| %>
-          <li class="list-group-item">
-            <%= link_to job_path(j) do %> 
-              <h3><%= j.position %> </h3>
+        <ul class="list-group">
+          
+          <% if @admin_jobs.exists? %>
+          <h3>Administración</h3>
+            <% @admin_jobs.each do |aj|%>
+              <li class="list-group-item">
+                <%= link_to job_path(aj) do %> 
+                  <h3><%= aj.position %> </h3>
+                <% end %>
+                <h6><%= aj.location%> | <%= aj.department %> | <%= aj.commitment %></h6>
+                <% if user_signed_in? %>
+                  <% if current_user.username == "oschvr" %>
+                    <%= link_to 'Editar', edit_job_path(aj), :class => "text-center" %>
+                    <%= link_to 'Eliminar', job_path(aj), method: :delete, :class => "text-center" %>
+                  <% end %>
+                <% end %>
+              </li>
             <% end %>
-            <h6><%= j.location%> | <%= j.department %> | <%= j.commitment %></h6>
-            <% if user_signed_in? %>
-              <% if current_user.username == "oschvr" %>
-                <%= link_to 'Editar', edit_job_path(j), :class => "text-center" %>
-                <%= link_to 'Eliminar', job_path(j), method: :delete, :class => "text-center" %>
-              <% end %>
+          <% end %>
+
+          <% if @finance_jobs.exists? %>
+          <h3>Finanzas</h3>
+            <% @finance_jobs.each do |fj|%>
+              <li class="list-group-item">
+                <%= link_to job_path(fj) do %> 
+                  <h3><%= fj.position %> </h3>
+                <% end %>
+                <h6><%= fj.location%> | <%= fj.department %> | <%= fj.commitment %></h6>
+                <% if user_signed_in? %>
+                  <% if current_user.username == "oschvr" %>
+                    <%= link_to 'Editar', edit_job_path(fj), :class => "text-center" %>
+                    <%= link_to 'Eliminar', job_path(fj), method: :delete, :class => "text-center" %>
+                  <% end %>
+                <% end %>
+              </li>
             <% end %>
-          </li>
-        <% end %>
-      </ul>
+          <% end %>
+
+
+          <h3>Desarrollo</h3>
+            <% @finance_jobs.each do |dj|%>
+              <li class="list-group-item">
+                <%= link_to job_path(dj) do %> 
+                  <h3><%= dj.position %> </h3>
+                <% end %>
+                <h6><%= dj.location%> | <%= dj.department %> | <%= dj.commitment %></h6>
+                <% if user_signed_in? %>
+                  <% if current_user.username == "oschvr" %>
+                    <%= link_to 'Editar', edit_job_path(dj), :class => "text-center" %>
+                    <%= link_to 'Eliminar', job_path(dj), method: :delete, :class => "text-center" %>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+
+
+          <% if @design_jobs.exists? %>
+          <h3>Diseño</h3>
+            <% @design_jobs.each do |dej|%>
+              <li class="list-group-item">
+                <%= link_to job_path(dej) do %> 
+                  <h3><%= dej.position %> </h3>
+                <% end %>
+                <h6><%= dej.location%> | <%= dej.department %> | <%= dej.commitment %></h6>
+                <% if user_signed_in? %>
+                  <% if current_user.username == "oschvr" %>
+                    <%= link_to 'Editar', edit_job_path(dej), :class => "text-center" %>
+                    <%= link_to 'Eliminar', job_path(dej), method: :delete, :class => "text-center" %>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+
+          <% if @support_jobs.exists? %>
+          <h3>Soporte</h3>
+            <% @support_jobs.each do |sj|%>
+              <li class="list-group-item">
+                <%= link_to job_path(sj) do %> 
+                  <h3><%= sj.position %> </h3>
+                <% end %>
+                <h6><%= sj.location%> | <%= sj.department %> | <%= sj.commitment %></h6>
+                <% if user_signed_in? %>
+                  <% if current_user.username == "oschvr" %>
+                    <%= link_to 'Editar', edit_job_path(sj), :class => "text-center" %>
+                    <%= link_to 'Eliminar', job_path(sj), method: :delete, :class => "text-center" %>
+                  <% end %>
+                <% end %>
+              </li>
+            <% end %>
+          <% end %>
+          
+        </ul>
       <% else %>
         <p>Por el momento no tenemos vacantes abiertas.</p>
         <p>Regresa pronto !</p>

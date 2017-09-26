@@ -4,7 +4,12 @@ class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
   def index
-    @jobs = Job.all.order("created_at desc")
+    @jobs = Job.all
+    @admin_jobs = Job.where(department: "desarrollo")
+    @finance_jobs = Job.where(department: "finanzas") 
+    @development_jobs = Job.where(department: "desarrollo")
+    @design_jobs = Job.where(department: "diseño")
+    @support_jobs = Job.where(department: "soporte")
   end
   
   def new
