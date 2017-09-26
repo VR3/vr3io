@@ -32,6 +32,10 @@
 					</div>
 
 					<div class="form-group">
+						<%= select_tag 'project[category]', options_for_select([['Categoría', 'categoria'], ['VR/AR', 'vr-ar'], ['Development', 'development'], ['Blockchain', 'blockchain'], ['Crypto', 'crypto'], ['AI/ML', 'ai-ml']], 'categoria'), :class => "form-control" %>
+          </div>
+
+					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">Descripción (Usa <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">Markdown</a>)</span>
 							<%= p.text_area :description, autofocus: true, :class => "form-control validate", :placeholder => "Descripción", rows: 5, cols: 10 %>
@@ -62,10 +66,9 @@
 					<div class="form-group">
 						<div class="input-group">
 							<span class="input-group-addon">Fecha</span>
-							<input type="text" id="date" name="date" data-provide='datepicker' class="form-control" autofocus="true" placeholder="Fecha">
+							<input type="text" id="project[date]" name="project[date]" data-provide='datepicker' class="form-control" autofocus="true" placeholder="Fecha">
 						</div>
 					</div>
-
 
 					<button class="btn-xl btn-inverse" type="submit" name="action">Enviar</button>
 

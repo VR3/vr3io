@@ -3,6 +3,10 @@ class ProjectsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 	def index
+		@filterrific = initialize_filterrific(
+			Project,
+			params[:filterrific]
+		) or return
 		@projects = Project.all.order("created_at desc")
 	end
 
@@ -54,6 +58,6 @@ class ProjectsController < ApplicationController
 	private
 
 	def project_params
-		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :image, :video)
+		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :category, :image, :video)
 	end
 end

@@ -142,8 +142,10 @@
       <div class="col-lg-12 text-center">
         <h2 class="section-heading">Proyectos</h2>
         <!--h3 class="section-subheading normal-text">Lo que hicimos y lo que nos gustó.</h3-->
+
       </div>
     </div>
+
     </br>
     <div class="row">
       <div class="container">
@@ -155,7 +157,7 @@
                           <%= image_tag p.image.url %>        
                       <% end %>
                       <div class="caption">
-                        <h4><small class="text-muted">Nombre </small> <u><%= p.title %></u></h4>
+                        <h4><!--small class="text-muted">Nombre </small--> <u><%= p.title %></u></h4>
                         <% if p.client %>
                           <h5 class="project-label"><small class="text-muted">Cliente</small> <%= p.client %></h5>
                         <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170904064030) do
+ActiveRecord::Schema.define(version: 20170926180420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 20170904064030) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.string   "department"
-    t.string   "type"
+    t.string   "commitment"
     t.index ["slug"], name: "index_jobs_on_slug", unique: true, using: :btree
   end
 
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20170904064030) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.string   "category"
     t.index ["slug"], name: "index_projects_on_slug", unique: true, using: :btree
   end
 
