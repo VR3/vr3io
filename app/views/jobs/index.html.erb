@@ -54,7 +54,7 @@
 
         <% if @development_jobs.exists? %>
           <h3>Desarrollo</h3>
-            <% @finance_jobs.each do |dj|%>
+            <% @development_jobs.each do |dj|%>
               <li class="list-group-item">
                 <%= link_to job_path(dj) do %> 
                   <h3><%= dj.position %> </h3>

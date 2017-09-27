@@ -34,6 +34,10 @@
           </div>
 
           <div class="form-group">
+            <%= select_tag 'project[category]', options_for_select([['Categoría', 'categoria'], ['VR/AR', 'vr-ar'], ['Development', 'development'], ['Blockchain', 'blockchain'], ['Crypto', 'crypto'], ['AI/ML', 'ai-ml']], 'project[category]'), :class => "form-control" %>
+          </div>
+
+          <div class="form-group">
 						<p>Portada del Proyecto (562x387, JPG, PNG)</p>
 						<%= p.file_field :image, :placeholder => "Imagen" %>
 					</div>

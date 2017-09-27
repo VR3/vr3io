@@ -38,14 +38,14 @@ class ProjectsController < ApplicationController
 
 	def update
 		@project = Project.friendly.find(params[:id])
-		if params[:project][:image]
+		if params[:project][:image].exists?
 			@project.image = params[:project][:image]
 		end
 		
-		if params[:project][:video]
+		if params[:project][:video].exists?
 			@project.video = params[:project][:video]
 		end
-		@project.update(project_params)
+		@project.update(project_params_for_update)
 		redirect_to @project
 	end
 
@@ -59,5 +59,9 @@ class ProjectsController < ApplicationController
 
 	def project_params
 		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :category, :image, :video)
+	end
+
+	def project_params_for_update
+		params.require(:project).permit(:title, :description, :link, :client, :provider, :date, :category)
 	end
 end
