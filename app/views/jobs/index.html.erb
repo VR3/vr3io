@@ -52,7 +52,7 @@
             <% end %>
           <% end %>
 
-
+        <% if @development_jobs.exists? %>
           <h3>Desarrollo</h3>
             <% @finance_jobs.each do |dj|%>
               <li class="list-group-item">
@@ -68,7 +68,7 @@
                 <% end %>
               </li>
             <% end %>
-
+          <% end %>
 
           <% if @design_jobs.exists? %>
           <h3>Diseño</h3>

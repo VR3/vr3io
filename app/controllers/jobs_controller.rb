@@ -5,7 +5,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.all
-    @admin_jobs = Job.where(department: "desarrollo")
+    @admin_jobs = Job.where(department: "admin")
     @finance_jobs = Job.where(department: "finanzas") 
     @development_jobs = Job.where(department: "desarrollo")
     @design_jobs = Job.where(department: "diseño")
