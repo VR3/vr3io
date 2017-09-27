@@ -30,6 +30,7 @@ gem 'faker'
 gem 'bootstrap-datepicker-rails'
 gem 'gemoji'
 gem 'filterrific'
+gem 'kaminari'
 # gem 'redis', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development

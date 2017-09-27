@@ -9,43 +9,33 @@
 <div class="row">
     <div class="container">
 
-        <!--div class="col-sm-12">
-            <%= form_for_filterrific @filterrific do |f| %>
+        <%= form_for_filterrific @filterrific do |f| %>
+            <div class="col-sm-3 col-sm-offset-4">
                 <div class="form-group">
                     <div class="input-group">
                         <%= f.text_field :search_query, autofocus: true, :class => "form-control validate", :placeholder => "Buscar Proyecto" %>
                         <span class="input-group-addon"><i class="fa fa-search"></i></span>
                     </div>        
                 </div>
-            <% end %>
-        </div-->
-
-        <% @projects.each do |p| %>
-            <%= link_to project_path(p) do %>
-            <div class="col-sm-4 col-md-4">
-                <div class="thumbnail">
-                    <% if p.image.url %>
-                        <%= image_tag p.image.url %>                
-                    <% end %>
-                    <div class="caption">
-                        <h3><u><%= p.title %></u></h3>
-                        <% if p.client %>
-                            <small class="text-muted">Cliente</small>
-                            <h4><%= p.client %></h4>
-                        <% end %>
-                        <% if p.provider %>
-                            <small class="text-muted">Agencia</small>
-                            <h5><%= p.provider %></h5>
-                        <% end %>
-                        <% if p.date %>
-                            <h5><%= p.date %></h5>
-                        <% end %>
-                        <p><%= markdown(p.description.truncate(90))%></p>
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <div class="input-group">
+                        <%= f.select(:with_category, @filterrific.select_options[:with_category], { include_hidden: false, include_blank: 'Todo'},
+                        :class => "form-control"
+                        )%>
                     </div>
                 </div>
-            </div>
-            <% end %>
+            </div> 
+            <div class="col-sm-12 text-center">
+                <%= render_filterrific_spinner %>
+                <%= link_to('Limpiar filtros', reset_filterrific_url) %>
+            </div> 
+
         <% end %>
+
+        <%= render partial: "partials/projects", locals: { projects: @projects } %>
+
     </div>
 </div>
 <br/>

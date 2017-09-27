@@ -20,4 +20,5 @@
 //= require validator
 //= require navbar
 //= require bootstrap-datepicker
+//= require filterrific/filterrific-jquery
 //= require_tree .

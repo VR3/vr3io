@@ -1,0 +1,31 @@
+<div id="filterrific_results" class="filterrific_results">
+    <% @projects.each do |p| %>
+        <%= link_to project_path(p) do %>
+        <div class="col-xs-6 col-sm-4 col-md-4">
+            <div class="thumbnail">
+                <% if p.image.url %>
+                    <%= image_tag p.image.url %>        
+                <% end %>
+                <div class="caption">
+                    <h4><!--small class="text-muted">Nombre </small--> <u><%= p.title %></u></h4>
+                    <% if p.client %>
+                    <h5 class="project-label"><small class="text-muted">Cliente</small> <%= p.client %></h5>
+                    <% end %>
+                    <% if p.provider %>
+                    <h6 class="project-label"><small class="text-muted">Agencia</small> <%= p.provider %></h6>
+                    <% end %>
+                    <% if p.date %>
+                    <h6 class="project-label"><small class="text-muted">Fecha</small>  <%= p.date %></h6>
+                    <% end %>
+                    <% if user_signed_in? %>
+                        <% if current_user.username == "oschvr" %>
+                        <%= link_to 'Editar', edit_project_path(p), :class => "text-center" %>
+                        <%= link_to 'Eliminar', project_path(p), method: :delete, :class => "text-center" %>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    <% end %>
+</div>

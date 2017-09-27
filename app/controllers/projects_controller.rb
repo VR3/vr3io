@@ -5,10 +5,20 @@ class ProjectsController < ApplicationController
 	def index
 		@filterrific = initialize_filterrific(
 			Project,
-			params[:filterrific]
+			params[:filterrific],
+			select_options: {
+				with_category: Project.options_for_select
+			},
+			:persistence_id => false,
+			default_filter_params: {},			
 		) or return
-		@projects = Project.all.order("created_at desc")
-	end
+		@projects = @filterrific.find.page(params[:page])
+		
+		respond_to do |format|
+			format.html
+			format.js
+		end
+	end 
 
 	def new
 		@project = Project.new
@@ -24,7 +34,6 @@ class ProjectsController < ApplicationController
 		else
 			render "new"
 		end
-
 	end
 
 	def show
@@ -38,13 +47,6 @@ class ProjectsController < ApplicationController
 
 	def update
 		@project = Project.friendly.find(params[:id])
-		if params[:project][:image].exists?
-			@project.image = params[:project][:image]
-		end
-		
-		if params[:project][:video].exists?
-			@project.video = params[:project][:video]
-		end
 		@project.update(project_params_for_update)
 		redirect_to @project
 	end

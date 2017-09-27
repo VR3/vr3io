@@ -17,7 +17,21 @@ class PagesController < ApplicationController
 	private
 
 	def get_projects
-		@projects = Project.all.order("created_at desc")
+		@filterrific = initialize_filterrific(
+			Project,
+			params[:filterrific],
+			select_options: {
+				with_category: Project.options_for_select
+			},
+			:persistence_id => false,
+			default_filter_params: {},			
+		) or return
+		@projects = @filterrific.find.page(params[:page])
+		
+		respond_to do |format|
+			format.html
+			format.js
+		end
 	end
 
 	def get_jobs
@@ -27,5 +41,7 @@ class PagesController < ApplicationController
 	def get_articles
 		@articles = Article.all.order("created_at desc")
 	end
+
+	
 
 end

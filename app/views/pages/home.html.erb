@@ -149,35 +149,34 @@
     </br>
     <div class="row">
       <div class="container">
-          <% @projects.each do |p| %>
-            <%= link_to project_path(p) do %>
-              <div class="col-xs-6 col-sm-4 col-md-4">
-                  <div class="thumbnail">
-                      <% if p.image.url %>
-                          <%= image_tag p.image.url %>        
-                      <% end %>
-                      <div class="caption">
-                        <h4><!--small class="text-muted">Nombre </small--> <u><%= p.title %></u></h4>
-                        <% if p.client %>
-                          <h5 class="project-label"><small class="text-muted">Cliente</small> <%= p.client %></h5>
-                        <% end %>
-                        <% if p.provider %>
-                          <h6 class="project-label"><small class="text-muted">Agencia</small> <%= p.provider %></h6>
-                        <% end %>
-                        <% if p.date %>
-                          <h6 class="project-label"><small class="text-muted">Fecha</small>  <%= p.date %></h6>
-                        <% end %>
-                        <% if user_signed_in? %>
-                            <% if current_user.username == "oschvr" %>
-                              <%= link_to 'Editar', edit_project_path(p), :class => "text-center" %>
-                              <%= link_to 'Eliminar', project_path(p), method: :delete, :class => "text-center" %>
-                            <% end %>
-                        <% end %>
-                      </div>
+        
+        <%= form_for_filterrific @filterrific do |f| %>
+          <div class="col-sm-3 col-sm-offset-4">
+              <div class="form-group">
+                  <div class="input-group">
+                      <%= f.text_field :search_query, autofocus: true, :class => "form-control validate", :placeholder => "Buscar Proyecto" %>
+                      <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                  </div>        
+              </div>
+          </div>
+          <div class="col-sm-3">
+              <div class="form-group">
+                  <div class="input-group">
+                      <%= f.select(:with_category, @filterrific.select_options[:with_category], { include_hidden: false, include_blank: 'Todo'},
+                      :class => "form-control"
+                      )%>
                   </div>
               </div>
-            <% end %>
-          <% end %>
+          </div> 
+          <div class="col-sm-12 text-center">
+              <%= render_filterrific_spinner %>
+              <%= link_to('Limpiar filtros', reset_filterrific_url, :class => "reset_filterrific") %>
+          </div> 
+
+        <% end %>
+        <br><br><br>
+        <%= render partial: "partials/projects", locals: { projects: @projects } %>
+
       </div>
     </div>
     <br/>
