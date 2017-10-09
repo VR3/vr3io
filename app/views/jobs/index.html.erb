@@ -22,7 +22,9 @@
                 <%= link_to job_path(aj) do %> 
                   <h3><%= aj.position %> </h3>
                 <% end %>
-                <h5><u><%= aj.salary %></u> MXN</h5>
+                <% if aj.salary %>
+                  <h5><u><%= aj.salary %></u> MXN</h5>
+                <% end %>
                 <h6><%= aj.location%> | <%= aj.department %> | <%= aj.commitment %></h6>
                 <% if user_signed_in? %>
                   <% if current_user.username == "oschvr" %>
@@ -41,7 +43,9 @@
                 <%= link_to job_path(fj) do %> 
                   <h3><%= fj.position %> </h3>
                 <% end %>
-                <h5><u><%= fj.salary %></u> MXN</h5>
+                <% if fj.salary %>
+                  <h5><u><%= fj.salary %></u> MXN</h5>
+                <% end %>
                 <h6><%= fj.location%> | <%= fj.department %> | <%= fj.commitment %></h6>
                 <% if user_signed_in? %>
                   <% if current_user.username == "oschvr" %>
@@ -57,10 +61,9 @@
           <h3>Desarrollo</h3>
             <% @development_jobs.each do |dj|%>
               <li class="list-group-item">
-                <%= link_to job_path(dj) do %> 
-                  <h3><%= dj.position %> </h3>
+                <% if dj.salary %>
+                  <h5><u><%= dj.salary %></u> MXN</h5>
                 <% end %>
-                <h5><u><%= dj.salary %></u> MXN</h5>
                 <h6><%= dj.location%> | <%= dj.department %> | <%= dj.commitment %></h6>
                 <% if user_signed_in? %>
                   <% if current_user.username == "oschvr" %>
@@ -79,7 +82,9 @@
                 <%= link_to job_path(dej) do %> 
                   <h3><%= dej.position %> </h3>
                 <% end %>
-                <h5><u><%= dej.salary %></u> MXN</h5>
+                <% if dej.salary %>
+                  <h5><u><%= dej.salary %></u> MXN</h5>
+                <% end %>
                 <h6><%= dej.location%> | <%= dej.department %> | <%= dej.commitment %></h6>
                 <% if user_signed_in? %>
                   <% if current_user.username == "oschvr" %>
@@ -98,7 +103,9 @@
                 <%= link_to job_path(sj) do %> 
                   <h3><%= sj.position %> </h3>
                 <% end %>
-                <h5><u><%= sj.salary %></u> MXN</h5>
+                <% if sj.salary %>
+                  <h5><u><%= sj.salary %></u> MXN</h5>
+                <% end %>
                 <h6><%= sj.location%> | <%= sj.department %> | <%= sj.commitment %></h6>
                 <% if user_signed_in? %>
                   <% if current_user.username == "oschvr" %>
