@@ -61,6 +61,9 @@
           <h3>Desarrollo</h3>
             <% @development_jobs.each do |dj|%>
               <li class="list-group-item">
+                <%= link_to job_path(dj) do %> 
+                  <h3><%= dj.position %> </h3>
+                <% end %>
                 <% if dj.salary %>
                   <h5><u><%= dj.salary %></u> MXN</h5>
                 <% end %>
