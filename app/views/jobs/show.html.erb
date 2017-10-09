@@ -20,7 +20,7 @@
                 <% if @job.location %>
                   <h4>Ubicación: <%= @job.location %></h4>
                 <% end %>
-                <h5><u><%= @job.salary %></u></h5>
+                <h5>Salario: <u><%= @job.salary %> MXN</u></h5>
                 <p><u><strong>Descripción:</strong></u> <%= markdown(@job.overview) %></p>
                 <p><u><strong>Responsabilidades:</strong></u> <%= markdown(@job.responsabilities) %></p>
                 <p><u><strong>Requisitos:</strong></u> <%= markdown(@job.qualifications) %></p>
