@@ -58,6 +58,7 @@
                 <%= link_to job_path(dj) do %> 
                   <h3><%= dj.position %> </h3>
                 <% end %>
+                <h5><u><%= dj.salary %></u></h5>
                 <h6><%= dj.location%> | <%= dj.department %> | <%= dj.commitment %></h6>
                 <% if user_signed_in? %>
                   <% if current_user.username == "oschvr" %>
