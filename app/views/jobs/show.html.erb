@@ -20,13 +20,17 @@
                 <% if @job.location %>
                   <h4>Ubicación: <%= @job.location %></h4>
                 <% end %>
-                <h5>Salario: <u><%= @job.salary %> MXN</u></h5>
+                <% if @job.salary %>
+                  <h5>Salario: <u><%= @job.salary %> MXN</u></h5>
+                <% end %>
                 <p><u><strong>Descripción:</strong></u> <%= markdown(@job.overview) %></p>
                 <p><u><strong>Responsabilidades:</strong></u> <%= markdown(@job.responsabilities) %></p>
                 <p><u><strong>Requisitos:</strong></u> <%= markdown(@job.qualifications) %></p>
                 <br>
-                <%=  mail_to "jobs@vr3.io", 'Aplica aqui', :cc => "info@vr3.io", :subject => "JOB Application @ VR3: " + @job.position %> 
-                <small> (Recuerda tener a la mano tu CV en formato PDF)</small>
+                <div class="text-center">
+                  <%= mail_to "jobs@vr3.io", 'Aplica aqui', :cc => "info@vr3.io", :subject => "JOB Application @ VR3: " + @job.position %> 
+                  <small> (Recuerda tener a la mano tu CV en formato PDF)</small>
+                </div>
               </div>
             </div>
         </div>
