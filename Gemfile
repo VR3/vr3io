@@ -31,6 +31,7 @@ gem 'bootstrap-datepicker-rails'
 gem 'gemoji'
 gem 'filterrific'
 gem 'kaminari'
+gem 'high_voltage', '~> 3.0.0'
 # gem 'redis', '~> 3.0'
 # gem 'bcrypt', '~> 3.1.7'
 # gem 'capistrano-rails', group: :development
