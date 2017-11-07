@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "pages#show", page: "home"
 
+  get "tracker" => "pages#tracker"
   get "company" => "pages#company"
   get "privacy" => "pages#privacy"
   get "services" => "pages#services"
