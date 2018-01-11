@@ -20,8 +20,7 @@ $(function(){
       // serialize
       var formData = $(form).serialize();
 
-
-      console.log("Form Data:", formData);
+      //console.log("Form Data:", formData);
 
       // create the asynch request
       $.ajax({
